@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>knows</title>
+    <link>https://showo.github.io/</link>
+    <description>Recent content on knows</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Apr 2018 16:08:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://showo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>生活片段</title>
+      <link>https://showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</link>
+      <pubDate>Sat, 07 Apr 2018 16:08:33 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</guid>
+      <description>&lt;p&gt;莫名的烦躁，就像是溺水一样的焦虑在这个春天的午后显得尤为强烈。我一直是个积极的懒惰者，随时战术勤奋战略消极吧，虽然花费了大量的时间用在改善自己的技能上，但实际并没有什么卵用，时间的推移必然出现消极反馈。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>半生</title>
+      <link>https://showo.github.io/post/%E5%8D%8A%E7%94%9F/</link>
+      <pubDate>Sun, 11 Feb 2018 23:09:09 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/%E5%8D%8A%E7%94%9F/</guid>
+      <description>&lt;p&gt;第一次看到这首诗觉得非常的惊艳，觉得一个人的感觉完全可以被文字给撑开。人生有涯，诗歌无界。这首诗是从&lt;a href=&#34;http://blog.sina.com.cn/s/blog_657d22b80100lvkj.html&#34;&gt;葛巾玉版&lt;/a&gt;的新浪博客上转载而来，原作者不明。希望你像我一样喜欢。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>数字化营销课程</title>
+      <link>https://showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</link>
+      <pubDate>Sat, 10 Feb 2018 15:51:42 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</guid>
+      <description>&lt;p&gt;收集整理一些线上优质的数字化营销课程，涉及搜索引擎、社会化媒体、信息流等。主要内容涵盖基础介绍、操作优化和数据分析等几个部分。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://showo.github.io/about/</link>
+      <pubDate>Sat, 10 Feb 2018 12:06:09 +0800</pubDate>
+      
+      <guid>https://showo.github.io/about/</guid>
+      <description>about me 博客目的 我是什么人 我想成为什么人 待补充</description>
+    </item>
+    
+    <item>
+      <title>hugo搭建博客</title>
+      <link>https://showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 02 Dec 2017 21:44:50 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://showo.github.io/img/article/inspiration-banner.png&#34; alt=&#34;&#34; /&gt;
+这事一篇关于hugo生成博客及安装在GitHub上实现GitHub pages效果博客的文章，流程及步骤简单极易上手。现在的问题是主题下的说明文档内容较少，需要到gohugo.io查找相关的标准。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
