@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-04-07T16:08:33&#43;08:00"/>
+<meta property="og:updated_time" content="2018-04-10T22:22:51&#43;08:00"/>
 
 
 
@@ -59,6 +59,72 @@
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" rel="bookmark">Python批量脚本收集</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-04-10T22:22:51">April 10, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			<p>1.批量查询百度收录-python脚本
+来源：<a href="http://www.niumou.com.cn/61">老丁学习笔记</a></p>
+
+<pre><code>#coding=utf-8
+
+import requests,time
+
+def getUrl(filepath):
+	with open(filepath,'r') as f:
+		f=f.readlines()
+		return f
+
+def getHtml(url):
+	try:
+		r=requests.get(url)
+		r.raise_for_status()
+		r.encoding=r.apparent_eccoding
+		return r.text
+	except:
+		return &quot;&quot;
+
+def isindex(link):
+	url=link.replace(&quot;http://&quot;,&quot;&quot;).replace(&quot;/&quot;,&quot;%2F&quot;)
+	url=&quot;http://www.baidu.com/s?wd=&quot;+url
+	html=getHtml(url)
+	if &quot;很抱歉，没有找到与&quot; in html or &quot;没有找到该URL&quot; in html:
+		print(link,&quot;未收录&quot;)
+	else:
+		print(link,&quot;收录&quot;)
+
+def main():
+	filepath=&quot;&quot;
+	urls=getUrl(filepath)
+	for url in urls:
+		url=url.strip()
+		isindex(url)
+		time.sleep(2)
+
+if __name__='__mian__':
+	main()
+
+</code></pre>
+
+<ul>
+<li>可以在打印收录/未收录之后将网址和结果保存到本地，目前想到的方式是通过with open的方式保存到另外一个文件夹中，但是输出结果又乱码。正在咨询他人……</li>
+</ul>
+
+<p></p>
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -153,6 +219,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Python批量脚本收集</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/">生活片段</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%8D%8A%E7%94%9F/">半生</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/">数字化营销课程</a></li>
@@ -169,6 +236,7 @@
 			<li class="widget__item"><a class="widget__link" href="/categories/hugo">Hugo</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/marketing">Marketing</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/others">Others</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/seo">Seo</a></li>
 		</ul>
 	</div>
 </div>
@@ -193,6 +261,7 @@
 		<a class="widget__link widget__link--taglist" href="/tags/hugo" title="hugo">hugo</a>
 		<a class="widget__link widget__link--taglist" href="/tags/marketing" title="marketing">marketing</a>
 		<a class="widget__link widget__link--taglist" href="/tags/others" title="others">others</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python</a>
 		<a class="widget__link widget__link--taglist" href="/tags/sem" title="sem">sem</a>
 	</div>
 </div>

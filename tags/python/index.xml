@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on knows</title>
+    <link>https://showo.github.io/tags/python/</link>
+    <description>Recent content in Python on knows</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 22:22:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://showo.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python批量脚本收集</title>
+      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Tue, 10 Apr 2018 22:22:51 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
+      <description>&lt;p&gt;1.批量查询百度收录-python脚本
+来源：&lt;a href=&#34;http://www.niumou.com.cn/61&#34;&gt;老丁学习笔记&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#coding=utf-8
+
+import requests,time
+
+def getUrl(filepath):
+	with open(filepath,&#39;r&#39;) as f:
+		f=f.readlines()
+		return f
+
+def getHtml(url):
+	try:
+		r=requests.get(url)
+		r.raise_for_status()
+		r.encoding=r.apparent_eccoding
+		return r.text
+	except:
+		return &amp;quot;&amp;quot;
+
+def isindex(link):
+	url=link.replace(&amp;quot;http://&amp;quot;,&amp;quot;&amp;quot;).replace(&amp;quot;/&amp;quot;,&amp;quot;%2F&amp;quot;)
+	url=&amp;quot;http://www.baidu.com/s?wd=&amp;quot;+url
+	html=getHtml(url)
+	if &amp;quot;很抱歉，没有找到与&amp;quot; in html or &amp;quot;没有找到该URL&amp;quot; in html:
+		print(link,&amp;quot;未收录&amp;quot;)
+	else:
+		print(link,&amp;quot;收录&amp;quot;)
+
+def main():
+	filepath=&amp;quot;&amp;quot;
+	urls=getUrl(filepath)
+	for url in urls:
+		url=url.strip()
+		isindex(url)
+		time.sleep(2)
+
+if __name__=&#39;__mian__&#39;:
+	main()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以在打印收录/未收录之后将网址和结果保存到本地，目前想到的方式是通过with open的方式保存到另外一个文件夹中，但是输出结果又乱码。正在咨询他人……&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
