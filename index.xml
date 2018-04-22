@@ -6,10 +6,43 @@
     <description>Recent content on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Apr 2018 22:22:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 22:47:16 +0800</lastBuildDate>
     
 	<atom:link href="https://showo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python批量处理图片尺寸脚本</title>
+      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Sun, 22 Apr 2018 22:47:16 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;h2 id=&#34;python-pillow批量处理图片尺寸&#34;&gt;python+pillow批量处理图片尺寸&lt;/h2&gt;
+
+&lt;p&gt;1.&lt;a href=&#34;https://blog.csdn.net/atyzy/article/details/77905463&#34;&gt;来源-csdn&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2.代码&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# coding=utf-8
+from PIL import Image
+import os.path
+import glob
+
+def conver(jpgfile,outdir,width=600,height=400):
+		img=Image.open(jpgfile)
+		img=img.convert(&#39;RGB&#39;) #将GIF,png等格式转换为jpg
+		try:	
+				new_img=img.resize((width,height))
+				new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+				print(os.path.basename(jpgfile))
+		except Exception as e:
+				print(e)
+				
+for jpgfile in glob.glob(&amp;quot;./test1/*.jpg&amp;quot;):
+		conver(jpgfile,&amp;quot;./test2/&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
     
     <item>
       <title>Python批量脚本收集</title>

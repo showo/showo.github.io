@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-04-10T22:22:51&#43;08:00"/>
+<meta property="og:updated_time" content="2018-04-22T22:47:16&#43;08:00"/>
 
 
 
@@ -59,6 +59,49 @@
 		<header class="page-header">
 			<h1 class="page-header__title">Posts</h1>
 		</header><article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/" rel="bookmark">Python批量处理图片尺寸脚本</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-04-22T22:47:16">April 22, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			<h2 id="python-pillow批量处理图片尺寸">python+pillow批量处理图片尺寸</h2>
+
+<p>1.<a href="https://blog.csdn.net/atyzy/article/details/77905463">来源-csdn</a></p>
+
+<p>2.代码</p>
+
+<pre><code># coding=utf-8
+from PIL import Image
+import os.path
+import glob
+
+def conver(jpgfile,outdir,width=600,height=400):
+		img=Image.open(jpgfile)
+		img=img.convert('RGB') #将GIF,png等格式转换为jpg
+		try:	
+				new_img=img.resize((width,height))
+				new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+				print(os.path.basename(jpgfile))
+		except Exception as e:
+				print(e)
+				
+for jpgfile in glob.glob(&quot;./test1/*.jpg&quot;):
+		conver(jpgfile,&quot;./test2/&quot;)
+
+</code></pre>
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
@@ -219,11 +262,11 @@ if __name__='__mian__':
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/">Python批量处理图片尺寸脚本</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Python批量脚本收集</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/">生活片段</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E5%8D%8A%E7%94%9F/">半生</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/">数字化营销课程</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hugo搭建博客</a></li>
 		</ul>
 	</div>
 </div>
