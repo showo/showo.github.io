@@ -12,16 +12,16 @@
     
     
     <item>
-      <title>Python批量处理图片尺寸脚本</title>
+      <title>Python在SEO方面的脚本</title>
       <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 22 Apr 2018 22:47:16 +0800</pubDate>
       
       <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
-      <description>&lt;h2 id=&#34;python-pillow批量处理图片尺寸&#34;&gt;python+pillow批量处理图片尺寸&lt;/h2&gt;
+      <description>&lt;h3 id=&#34;一-python-pillow批量处理图片尺寸&#34;&gt;一.python+pillow批量处理图片尺寸&lt;/h3&gt;
 
 &lt;p&gt;1.&lt;a href=&#34;https://blog.csdn.net/atyzy/article/details/77905463&#34;&gt;来源-csdn&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;2.代码&lt;/p&gt;
+&lt;p&gt;2.代码(处理成宽600，高400的尺寸；开始只想处理宽度，让高度自适应，没有找得到相关的资料。还在图片本身尺寸够大，600和400的比例没有导致图片的变形等问题，其他小尺寸的图片则要注意。)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;# coding=utf-8
 from PIL import Image
@@ -41,7 +41,9 @@ def conver(jpgfile,outdir,width=600,height=400):
 for jpgfile in glob.glob(&amp;quot;./test1/*.jpg&amp;quot;):
 		conver(jpgfile,&amp;quot;./test2/&amp;quot;)
 
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
