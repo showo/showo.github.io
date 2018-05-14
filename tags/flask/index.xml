@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flask on knows</title>
+    <link>https://showo.github.io/tags/flask/</link>
+    <description>Recent content in Flask on knows</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 May 2018 22:01:22 +0800</lastBuildDate>
+    
+	<atom:link href="https://showo.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FlaskWeb-抄书</title>
+      <link>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 09 May 2018 22:01:22 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h2 id=&#34;flask-web开发学习记录-1&#34;&gt;Flask Web开发学习记录(1)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;背景环境：32位win10系统&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;第一章-安装&#34;&gt;第一章 安装&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-安装虚拟环境&#34;&gt;1.安装虚拟环境&lt;/h4&gt;
+
+&lt;p&gt;1.1 前提：虚拟环境由第三方工具virtualenv创建
+1.2 步骤：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;python中安装virtualenv工具，在cmd环境中执行&lt;strong&gt;pip install virtualenv&lt;/strong&gt;命令&lt;/li&gt;
+&lt;li&gt;在新文件夹中创建虚拟环境：&lt;strong&gt;virtualenv venv&lt;/strong&gt; ,venv是安装了全新的虚拟环境文件夹。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用前激活虚拟环境：&lt;strong&gt;venv\Scripts\activata&lt;/strong&gt;,如果取消则相应的执行deacitvate.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;激活后显示：(venv)$
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

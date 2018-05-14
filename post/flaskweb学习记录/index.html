@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlaskWeb-抄书</title>
+<meta name="description" content=" about SEO and SEM">
+<meta name="generator" content="Hugo 0.31.1" />
+<meta property="og:title" content="FlaskWeb-抄书" />
+<meta property="og:description" content="Flask Web开发学习记录(1)
+
+
+背景环境：32位win10系统
+
+
+第一章 安装
+
+1.安装虚拟环境
+
+1.1 前提：虚拟环境由第三方工具virtualenv创建
+1.2 步骤：
+
+
+python中安装virtualenv工具，在cmd环境中执行pip install virtualenv命令
+在新文件夹中创建虚拟环境：virtualenv venv ,venv是安装了全新的虚拟环境文件夹。
+
+使用前激活虚拟环境：venv\Scripts\activata,如果取消则相应的执行deacitvate.
+
+
+激活后显示：(venv)$
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
+
+
+
+<meta property="article:published_time" content="2018-05-09T22:01:22&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-05-09T22:01:22&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="knows" rel="home">
+						<h1 class="logo__title">knows</h1>
+						<h2 class="logo__tagline">be yourself  know yourself</h2>
+					</a>
+				</div>
+			</div>
+			
+<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link" href="/">HOME</a></li>
+		<li class="menu__item"><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+<main class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post">
+		<header class="post__header clearfix">
+			<h1 class="post__title">FlaskWeb-抄书</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2018-05-09T22:01:22">May 09, 2018</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+					<a class="meta-categories__link" href="/categories/flask" rel="category">Flask</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			<h2 id="flask-web开发学习记录-1">Flask Web开发学习记录(1)</h2>
+
+<blockquote>
+<p>背景环境：32位win10系统</p>
+</blockquote>
+
+<h3 id="第一章-安装">第一章 安装</h3>
+
+<h4 id="1-安装虚拟环境">1.安装虚拟环境</h4>
+
+<p>1.1 前提：虚拟环境由第三方工具virtualenv创建
+1.2 步骤：</p>
+
+<ul>
+<li>python中安装virtualenv工具，在cmd环境中执行<strong>pip install virtualenv</strong>命令</li>
+<li>在新文件夹中创建虚拟环境：<strong>virtualenv venv</strong> ,venv是安装了全新的虚拟环境文件夹。</li>
+
+<li><p>使用前激活虚拟环境：<strong>venv\Scripts\activata</strong>,如果取消则相应的执行deacitvate.</p>
+
+<ul>
+<li><p>激活后显示：(venv)$
+</p>
+
+<h4 id="2-安装flask扩展包">2.安装flask扩展包</h4>
+
+<p>2.1 安装flask：
+（venv)$ pip install flask</p></li>
+</ul></li>
+</ul>
+
+<p>验证flask是否安装正确，在python解释器中导入flask：</p>
+
+<pre><code>(venv)$ python
+&gt;&gt;&gt; improt flask
+&gt;&gt;&gt;
+</code></pre>
+
+<h3 id="第二章-程序的基本结构">第二章 程序的基本结构</h3>
+
+<h4 id="2-1-初始化">2.1 初始化</h4>
+
+<p>创建程序实例(Flask程序必须创建一个程序实例，程序实例就是Flask类的对象)</p>
+
+<pre><code>from flask import Flask
+app=Flask(__name__)
+</code></pre>
+
+<p>Flask类的构造函数(<strong>init</strong>())只有一个必须指定的参数，即程序主模块或包的名字。在大多数程序中，Python的<font color='red'>____ name __ __变量</font>就是所需的值。</p>
+
+<h3 id="2-2-路由和视图函数">2.2 路由和视图函数</h3>
+
+<p>2.2.1 <strong>路由-含义</strong>：处理URL和函数之间关系的程序被称为路由。（客户端即浏览器发送请求到web服务器，web服务器再把请求发送给Flask程序实例。程序实例需要知道对每个URL请求运行哪些代码，所以保存了一个URL到Python函数的映射关系。）</p>
+
+<p>2.2.2 <strong>路由-定义</strong>：使用程序实例提供的&rsquo;app.route&rsquo;装饰器，把修饰函数注册为路由。</p>
+
+<p>使用：</p>
+
+<pre><code>	@app.route('/')
+	def index(x):  # 此函数注册为程序根地址的处理程序
+		return '&lt;h1&gt;hellow world&lt;/h1&gt;'  # 返回值称为‘响应’，是客户端接受的内容。
+</code></pre>
+
+<p>2.2.3 <strong>视图函数(view function)</strong>:像index()这样的函数成为视图函数。视图函数返回的快车是HTML字符串，也可以是复杂的表单。</p>
+
+<p>注：在python代码中嵌入响应字符串会使代码难以维护。</p>
+
+<p>Flask支持URL格式：很多地址中包含的可变部分,只需在route修饰器中使用特殊的句法即可。</p>
+
+<pre><code>@app.route('/usr/&lt;name&gt;')   # &lt;name&gt;就是动态部分
+def user(name):
+	return '&lt;h1&gt;hello,%s!&lt;/h1&gt;' %name
+</code></pre>
+
+<p>注：路由中的动态部分默认使用字符串，但也可使用类型定义。支持int、float、path等类型。path类型也是字符串，但不把斜线视为分隔符，而将其当做动态片段的一部分。</p>
+
+<h4 id="2-3-启动服务器">2.3 启动服务器</h4>
+
+<blockquote>
+<p>程序实例使用<strong>run</strong>方法启动Flask集成的开发web服务器：</p>
+</blockquote>
+
+<pre><code>if __name__=='__main__':
+	app.run(debug=True)
+</code></pre>
+
+<p>app.run()函数接受用于设置web服务器的操作模式。启用调试模式可以为工作带来便利，比如激活调试器和重载程序。把debug参数设为True，启用调试模式。</p>
+
+<h4 id="2-4-一个完整的程序">2.4 一个完整的程序</h4>
+
+<p>2.4.1 示例，hello.py，一个完整的Flask程序</p>
+
+<pre><code>from flask import Flask
+app=Flask(__name__)
+
+@app.route('/')
+def index(x):
+	return '&lt;h1&gt; hello,world&lt;/h1&gt;'
+
+if __name__==__main__:
+	app.run(debug=True)
+</code></pre>
+
+<p>启动程序(windows环境)：</p>
+
+<pre><code>D:\learnfla&gt;venv\Scripts\acitvate
+
+(venv)D:\learnfla&gt;python hello.py
+* Restraing with start
+* Debugger is active!
+* Debugger PIN:196-584-485
+* Running on http://127.0.0.1:5000/
+
+</code></pre>
+
+<p>2.4.2 添加动态路由：</p>
+
+<pre><code>from flask import Flask
+app=Flask(__name__)
+
+@app.route('/')
+def index():
+    return '&lt;h1&gt;hello,world&lt;/h1&gt;'
+
+@app.route('/user/&lt;name&gt;')
+def user(name):
+    return '&lt;h1&gt;hello,%s!&lt;/h1&gt; %name
+
+if __name__==__main__:
+    app.run(debug=True)
+</code></pre>
+
+<h4 id="2-5-请求-响应循环">2.5 请求-响应循环</h4>
+
+<p>2.5.1 程序/请求上下文</p>
+
+<blockquote>
+<p>Flask从客户端收到请求时，要让视图函数能访问一些对象，这样才能处理请求。
+为了避免可有可无的参数把视图函数弄得一团糟，Flask使用<strong>上下文</strong>临时把某些对象变为全局可访问。</p>
+</blockquote>
+
+<p>有了上下文的视图函数：</p>
+
+<pre><code>from flask import Flask
+
+@app.route('/')
+def index():
+    user_agent=request.headers.get('User-agent')
+    return '&lt;p&gt; Your brower is %s&lt;p&gt; %user_agent
+
+</code></pre>
+
+<p>在Flask中，有两种上下文：程序上下文和请求上下文。下表中列出了这两种上下文提供的变量。
+<table><tr><th>变量名</th><th>上下文</th><th>说明</th></tr><tr><td>current_app</td><td>程序上下文</td><td>当前激活程序的程序实例</td></tr><tr><td>g</td><td>程序上下文</td><td>处理请求时用作临时存储的对象。每次请求都会重设这个变量</td></tr><tr><td>request</td><td>请求上下文</td><td>请求对象，封装了客户端发出的HTTP请求中的内容</td></tr><tr><td>session</td><td>请求上下文</td><td>用户会话，用于存储请求之间需要‘记住’的值的词典</td></tr></table></p>
+
+<p>Flask在分发请求前激活/推送程序/请求上下文，请求处理完成后再将其删除。如果使用变量时没有激活程序/请求上下文，就会导致错误。</p>
+
+<p><strong>程序上下文的使用方法：</strong></p>
+
+<pre><code>&gt;&gt;&gt; from hello improt app
+&gt;&gt;&gt; from flask import current_app
+&gt;&gt;&gt; current_app.name
+Traceback (most recent call last):
+···
+RuntimeError:working outside of application context
+&gt;&gt;&gt; app_ctx=app.app_context() # 在程序实例上调用app.app_context()可获得一个程序上下文
+&gt;&gt;&gt; app_ctx.push()
+&gt;&gt;&gt; current_app.name
+'hello'
+&gt;&gt;&gt; app_ctx.pop()
+</code></pre>
+
+<p>在这个例子中，没激活程序上下文就调用current_app.name会导致错误，但推送完上下文后就可以调用了。</p>
+
+<p>2.5.2 请求调度</p>
+
+<p>Flask程序在收到客户端发来的请求时，要找到处理该请求的视图函数。为了完成这个任务，Flask会在程序的URL映射中查找请求的URL。URL映射是URL和视图函数之间的对应关系。Flask使用app.route修饰器或非修饰器形式的app.add_url_rule()生成映射。</p>
+
+<p>查看Flask程序中URL映射，可检查hello.py生成的映射。</p>
+
+<pre><code>(venv) D:\learnfla&gt;python
+&gt;&gt;&gt; from hello import app
+&gt;&gt;&gt; app.url_map
+Map([Rule '/' (HEAD,OPTIONS,GET)    -&gt; index&gt;,
+ &lt;Rule '/static/&lt;filename&gt;' (HEAD,OPTIONS,GET) -&gt;static&gt;,
+ &lt;Rule '/user/&lt;name&gt;' (HEAD,OPTIONS,GET) -&gt;user&gt;])
+
+</code></pre>
+
+<p>‘/’和‘user/<name>’路由是在程序中使用app.route修饰器定义。/static/<filename>路由是Flask添加的特殊路由，用于访问静态文件。</p>
+
+<p>URL映射中的HEAD,OPTIONS,GET是请求方法，由路由进行处理。Flask为每个路由都指定了请求方法，这样不同的请求方法发送到相同的URL上时，会使用不同的视图函数进行处理。HEAD、OPTIONS方法由Flask自动处理，因此可以这么说，URL映射中的3个路由都是用GET方法。</p>
+
+<p>2.5.3 请求钩子</p>
+
+<blockquote>
+<p>为了避免在每个视图函数中都是用重复的代码，Flask提供了注册通用函数功能，注册的函数可在请求被分发到视图函数之前或之后调用。</p>
+</blockquote>
+
+<p>请求钩子是用修饰器实现，Flask支持4种钩子：</p>
+
+<ul>
+<li>before_first_request: 注册一个函数，在处理第一个请求前运行</li>
+<li>before_request: 注册一个函数，在每次请求前运行</li>
+<li>after_request: 注册一个函数，如果没有未处理的异常抛出，在每次请求之后运行。</li>
+<li>teardown_request: 注册一个函数，即使有未处理的异常抛出，也在每次请求之后运行。</li>
+</ul>
+
+<p>2.5.4 响应</p>
+
+<p>Flask调用视图函数后，会将其返回值作为响应的内容。大多数情况下，响应就是一个简单的字符串，作为HTML页面回送客户端。</p>
+
+<p>HTTP协议需要作为请求响应的字符串+状态码，Flask默认设为200，表明请求已被成功处理。</p>
+
+<p>如果视图函数返回的响应需要使用不同的状态码，可以把数字代码作为第二个返回值添加在响应文本之后。
+例如：</p>
+
+<pre><code>@app.route('/')
+def index():
+    return '&lt;h1&gt;Bad Request&lt;/h1&gt;'，400
+
+</code></pre>
+
+<p>视图函数返回的响应还可以接受第三个参数，这是一个由首部(header)组成的字典，可以添加到HTTP响应中。</p>
+
+<p>如果不想返回由1个、2个或3个值组成的元组，Flask视图函数还可以返回<strong>Response对象</strong>。make_response()函数可接受1个、2个、3个参数（和视图函数的返回值一样），并返回一个Response对象。
+有时我们需要在视图函数中进行这种转换，然后在响应对象上调用各种方法。</p>
+
+<p>例子：创建响应对象，添加cookie：</p>
+
+<pre><code>from flask import Flask
+
+@app.route('/')
+def index():
+    response=makr_response('&lt;h1&gt;This document carries a cookie!&lt;/h1&gt;')
+    reponse.set_cookie('answer','42')
+    return response
+
+</code></pre>
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link" href="/tags/flask/" rel="tag">Flask</a></li>
+	</ul>
+</div>
+
+	</article>
+	
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="S.J avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About S.J</span>
+	</div>
+	<div class="authorbox__description">
+		dont go gentle into that the good night.
+	</div>
+</div>
+	
+<nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<div class="post-nav__item post-nav__item--prev col-1-2">
+		<a class="post-nav__link" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">Python在SEO方面的脚本</p></a>
+	</div>
+</nav>
+
+	
+</main>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+	
+	
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">FlaskWeb-抄书</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/">Python在SEO方面的脚本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Python批量脚本收集</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/">生活片段</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/%E5%8D%8A%E7%94%9F/">半生</a></li>
+		</ul>
+	</div>
+</div>
+
+	
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/flask">Flask</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/hugo">Hugo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/marketing">Marketing</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/others">Others</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/seo">Seo</a></li>
+		</ul>
+	</div>
+</div>
+	
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/showo" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+	
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget__link widget__link--taglist" href="/tags/blog" title="blog">blog</a>
+		<a class="widget__link widget__link--taglist" href="/tags/flask" title="flask">flask</a>
+		<a class="widget__link widget__link--taglist" href="/tags/hugo" title="hugo">hugo</a>
+		<a class="widget__link widget__link--taglist" href="/tags/marketing" title="marketing">marketing</a>
+		<a class="widget__link widget__link--taglist" href="/tags/others" title="others">others</a>
+		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python</a>
+		<a class="widget__link widget__link--taglist" href="/tags/sem" title="sem">sem</a>
+	</div>
+</div>
+</aside>
+
+	</div>
+		<footer class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+			<div class="container container-inner">
+				<p class="footer__copyright">&copy; 2018 knows. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad theme</a>.</span></p>
+			</div>
+		</footer>
+	</div>
+
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+	});
+</script>
+</body>
+</html>
