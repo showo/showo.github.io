@@ -7,7 +7,7 @@
 <meta name="description" content=" about SEO and SEM">
 <meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="FlaskWeb-抄书" />
-<meta property="og:description" content="Flask Web开发学习记录(1)
+<meta property="og:description" content="Flask Web-抄书(1)
 
 
 背景环境：32位win10系统
@@ -23,11 +23,10 @@
 
 python中安装virtualenv工具，在cmd环境中执行pip install virtualenv命令
 在新文件夹中创建虚拟环境：virtualenv venv ,venv是安装了全新的虚拟环境文件夹。
-
 使用前激活虚拟环境：venv\Scripts\activata,如果取消则相应的执行deacitvate.
-
-
 激活后显示：(venv)$
+
+
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
@@ -92,7 +91,7 @@ python中安装virtualenv工具，在cmd环境中执行pip install virtualenv命
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			<h2 id="flask-web开发学习记录-1">Flask Web开发学习记录(1)</h2>
+			<h2 id="flask-web-抄书-1">Flask Web-抄书(1)</h2>
 
 <blockquote>
 <p>背景环境：32位win10系统</p>
@@ -108,19 +107,17 @@ python中安装virtualenv工具，在cmd环境中执行pip install virtualenv命
 <ul>
 <li>python中安装virtualenv工具，在cmd环境中执行<strong>pip install virtualenv</strong>命令</li>
 <li>在新文件夹中创建虚拟环境：<strong>virtualenv venv</strong> ,venv是安装了全新的虚拟环境文件夹。</li>
+<li>使用前激活虚拟环境：<strong>venv\Scripts\activata</strong>,如果取消则相应的执行deacitvate.</li>
+<li>激活后显示：(venv)$</li>
+</ul>
 
-<li><p>使用前激活虚拟环境：<strong>venv\Scripts\activata</strong>,如果取消则相应的执行deacitvate.</p>
-
-<ul>
-<li><p>激活后显示：(venv)$
-</p>
+<p></p>
 
 <h4 id="2-安装flask扩展包">2.安装flask扩展包</h4>
 
-<p>2.1 安装flask：
-（venv)$ pip install flask</p></li>
-</ul></li>
-</ul>
+<p>2.1 安装flask：</p>
+
+<p>(venv)$ pip install flask</p>
 
 <p>验证flask是否安装正确，在python解释器中导入flask：</p>
 
@@ -143,18 +140,18 @@ app=Flask(__name__)
 
 <h3 id="2-2-路由和视图函数">2.2 路由和视图函数</h3>
 
-<p>2.2.1 <strong>路由-含义</strong>：处理URL和函数之间关系的程序被称为路由。（客户端即浏览器发送请求到web服务器，web服务器再把请求发送给Flask程序实例。程序实例需要知道对每个URL请求运行哪些代码，所以保存了一个URL到Python函数的映射关系。）</p>
+<p>2.2.1 路由-含义：处理URL和函数之间关系的程序被称为路由。（客户端即浏览器发送请求到web服务器，web服务器再把请求发送给Flask程序实例。程序实例需要知道对每个URL请求运行哪些代码，所以保存了一个URL到Python函数的映射关系。）</p>
 
-<p>2.2.2 <strong>路由-定义</strong>：使用程序实例提供的&rsquo;app.route&rsquo;装饰器，把修饰函数注册为路由。</p>
+<p>2.2.2 路由-定义：使用程序实例提供的&rsquo;app.route&rsquo;装饰器，把修饰函数注册为路由。</p>
 
 <p>使用：</p>
 
-<pre><code>	@app.route('/')
-	def index(x):  # 此函数注册为程序根地址的处理程序
-		return '&lt;h1&gt;hellow world&lt;/h1&gt;'  # 返回值称为‘响应’，是客户端接受的内容。
+<pre><code>@app.route('/')
+def index(x):  # 此函数注册为程序根地址的处理程序
+    return '&lt;h1&gt;hellow world&lt;/h1&gt;'  # 返回值称为‘响应’，是客户端接受的内容。
 </code></pre>
 
-<p>2.2.3 <strong>视图函数(view function)</strong>:像index()这样的函数成为视图函数。视图函数返回的快车是HTML字符串，也可以是复杂的表单。</p>
+<p>2.2.3 视图函数(view function):像index()这样的函数成为视图函数。视图函数返回的快车是HTML字符串，也可以是复杂的表单。</p>
 
 <p>注：在python代码中嵌入响应字符串会使代码难以维护。</p>
 
@@ -162,7 +159,7 @@ app=Flask(__name__)
 
 <pre><code>@app.route('/usr/&lt;name&gt;')   # &lt;name&gt;就是动态部分
 def user(name):
-	return '&lt;h1&gt;hello,%s!&lt;/h1&gt;' %name
+    return '&lt;h1&gt;hello,%s!&lt;/h1&gt;' %name
 </code></pre>
 
 <p>注：路由中的动态部分默认使用字符串，但也可使用类型定义。支持int、float、path等类型。path类型也是字符串，但不把斜线视为分隔符，而将其当做动态片段的一部分。</p>
@@ -219,7 +216,7 @@ def index():
 def user(name):
     return '&lt;h1&gt;hello,%s!&lt;/h1&gt; %name
 
-if __name__==__main__:
+if __name__=='__main__':
     app.run(debug=True)
 </code></pre>
 
@@ -316,7 +313,7 @@ def index():
 
 <p>视图函数返回的响应还可以接受第三个参数，这是一个由首部(header)组成的字典，可以添加到HTTP响应中。</p>
 
-<p>如果不想返回由1个、2个或3个值组成的元组，Flask视图函数还可以返回<strong>Response对象</strong>。make_response()函数可接受1个、2个、3个参数（和视图函数的返回值一样），并返回一个Response对象。
+<p>如果不想返回由1个、2个或3个值组成的<strong>元组</strong>，Flask视图函数还可以返回<strong>Response对象</strong>。make_response()函数可接受1个、2个、3个参数（和视图函数的返回值一样），并返回一个Response对象。
 有时我们需要在视图函数中进行这种转换，然后在响应对象上调用各种方法。</p>
 
 <p>例子：创建响应对象，添加cookie：</p>
@@ -330,6 +327,65 @@ def index():
     return response
 
 </code></pre>
+
+<p>有一种名为<strong>重定向</strong>的特殊响应类型，这种类型没有文档，知识告诉浏览器一个新的地址用以加载页面。重定向经常在web表单中使用。
+重定向经常使用302状态码表示，指向的地址由Location首部提供。重定向响应可以使用3个值形式的返回值生成，也可在Response对象中设定。由于使用频繁，Flask提供了redirect()辅助函数，用于生成这种响应：</p>
+
+<pre><code>from flask import redirect
+
+@app.route('/')
+def index():
+    return redirect('http://www.example.com')
+
+</code></pre>
+
+<p>处理错误的响应：由abort函数生成，返回状态码404：
+例子：URL中的动态参数id对应的用户不存在，返回404状态码。</p>
+
+<pre><code>from flask improt abort
+
+@app.route('/user/&lt;id&gt;')
+def get_user(id):
+    user=load_user(id)
+    if not user:
+        abort(404)
+    return '&lt;h1&gt; hello,%s&lt;/h1&gt;' %user.name
+ 
+</code></pre>
+
+<h4 id="2-6-flask扩展">2.6 Flask扩展</h4>
+
+<blockquote>
+<p>Flask被设计为可扩展形式，开发者可以自由选择最合适程序的包，或者按需求自行开发。</p>
+</blockquote>
+
+<p>把扩展整合到程序中,例子使用Flask-Script支持命令行选项：
+Flask-Script为Flask程序添加了一个命令行解析器。</p>
+
+<p>安装：(venv) D:\learnfla&gt;pip isntall flask-script</p>
+
+<p>示例，使用Flask-Script</p>
+
+<pre><code>from flask.ext.script import Manager
+from flask import Flask
+
+app=Flask(__name__)
+manager=Manager(app)
+
+@manager.command
+def index():
+    return '&lt;h1&gt;hello,world&lt;/h1&gt;'
+
+
+if __name__=='__main__':
+    manager.run()
+
+</code></pre>
+
+<p>这个地方没看懂，
+资料1：<a href="https://blog.csdn.net/bestallen/article/details/52249603">https://blog.csdn.net/bestallen/article/details/52249603</a></p>
+
+<p>资料2：<a href="https://my.oschina.net/lijsf/blog/158828">https://my.oschina.net/lijsf/blog/158828</a></p>
 		</div>
 		
 <div class="post__tags tags clearfix">

@@ -67,7 +67,7 @@
 			</div>
 		</header>
 		<div class="list__excerpt">
-			<h2 id="flask-web开发学习记录-1">Flask Web开发学习记录(1)</h2>
+			<h2 id="flask-web-抄书-1">Flask Web-抄书(1)</h2>
 
 <blockquote>
 <p>背景环境：32位win10系统</p>
@@ -83,12 +83,11 @@
 <ul>
 <li>python中安装virtualenv工具，在cmd环境中执行<strong>pip install virtualenv</strong>命令</li>
 <li>在新文件夹中创建虚拟环境：<strong>virtualenv venv</strong> ,venv是安装了全新的虚拟环境文件夹。</li>
+<li>使用前激活虚拟环境：<strong>venv\Scripts\activata</strong>,如果取消则相应的执行deacitvate.</li>
+<li>激活后显示：(venv)$</li>
+</ul>
 
-<li><p>使用前激活虚拟环境：<strong>venv\Scripts\activata</strong>,如果取消则相应的执行deacitvate.</p>
-
-<ul>
-<li><p>激活后显示：(venv)$
-</p>
+<p></p>
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">Read more…</a>
@@ -119,17 +118,17 @@ import os.path
 import glob
 
 def conver(jpgfile,outdir,width=600,height=400):
-		img=Image.open(jpgfile)
-		img=img.convert('RGB') #将GIF,png等格式转换为jpg
-		try:	
-				new_img=img.resize((width,height))
-				new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
-				print(os.path.basename(jpgfile))
-		except Exception as e:
-				print(e)
+	img=Image.open(jpgfile)
+	img=img.convert('RGB') #将GIF,png等格式转换为jpg
+	try:	
+		new_img=img.resize((width,height))
+		new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+		print(os.path.basename(jpgfile))
+	except Exception as e:
+			print(e)
 				
 for jpgfile in glob.glob(&quot;./test1/*.jpg&quot;):
-		conver(jpgfile,&quot;./test2/&quot;)
+	conver(jpgfile,&quot;./test2/&quot;)
 
 </code></pre>
 
@@ -161,34 +160,34 @@ import requests,time
 
 def getUrl(filepath):
 	with open(filepath,'r') as f:
-		f=f.readlines()
-		return f
+	    f=f.readlines()
+	    return f
 
 def getHtml(url):
 	try:
-		r=requests.get(url)
-		r.raise_for_status()
-		r.encoding=r.apparent_eccoding
-		return r.text
+	    r=requests.get(url)
+	    r.raise_for_status()
+	    r.encoding=r.apparent_eccoding
+	    return r.text
 	except:
-		return &quot;&quot;
+	    return &quot;&quot;
 
 def isindex(link):
-	url=link.replace(&quot;http://&quot;,&quot;&quot;).replace(&quot;/&quot;,&quot;%2F&quot;)
-	url=&quot;http://www.baidu.com/s?wd=&quot;+url
-	html=getHtml(url)
-	if &quot;很抱歉，没有找到与&quot; in html or &quot;没有找到该URL&quot; in html:
-		print(link,&quot;未收录&quot;)
+    url=link.replace(&quot;http://&quot;,&quot;&quot;).replace(&quot;/&quot;,&quot;%2F&quot;)
+    url=&quot;http://www.baidu.com/s?wd=&quot;+url
+    html=getHtml(url)
+    if &quot;很抱歉，没有找到与&quot; in html or &quot;没有找到该URL&quot; in    html:
+	    print(link,&quot;未收录&quot;)
 	else:
-		print(link,&quot;收录&quot;)
+	    print(link,&quot;收录&quot;)
 
 def main():
 	filepath=&quot;&quot;
 	urls=getUrl(filepath)
 	for url in urls:
-		url=url.strip()
-		isindex(url)
-		time.sleep(2)
+	    url=url.strip()
+	    isindex(url)
+	    time.sleep(2)
 
 if __name__='__mian__':
 	main()
