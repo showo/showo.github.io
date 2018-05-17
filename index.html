@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-05-09T22:01:22&#43;08:00"/>
+<meta property="og:updated_time" content="2018-05-17T21:42:58&#43;08:00"/>
 
 
 
@@ -59,7 +59,38 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
-				<a href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="bookmark">FlaskWeb-抄书</a>
+				<a href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/" rel="bookmark">FlaskWeb-抄书二</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-05-17T21:42:58">May 17, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
+ 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
+示例：templates/index.html: Jinja2模板
+&lt;h1&gt;hello，world！&lt;/h1&gt;
+在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
+&lt;h1&gt;hello,{{name}}&lt;/h1&gt;
+3.1.1 渲染模板 &gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
+把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
+from flask improt Flask，render_template #... @app.route('/') def index(): return render_template('index.html') @app.route('/user/&lt;name&gt;') def user(name): return render_template('user.html',name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
+3.1.2 变量
+上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
+Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
+&lt;p&gt; a value from a dictionary: {{mydict['key']}}.&lt;/p&gt; &lt;p&gt; a value from a list: {{mydict['key']}}.&lt;/p&gt; &lt;p&gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&lt;/p&gt; &lt;p&gt; a value from a object's method: {{myobj.
+		</div>
+		<div class="list__footer">
+			<a class="list__footer-readmore btn" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">Read more…</a>
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
+				<a href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="bookmark">FlaskWeb-抄书(1)</a>
 			</h3>
 			<div class="list__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
@@ -302,11 +333,11 @@ if __name__='__mian__':
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">FlaskWeb-抄书</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">FlaskWeb-抄书二</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">FlaskWeb-抄书(1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/">Python在SEO方面的脚本</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Python批量脚本收集</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/">生活片段</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/%E5%8D%8A%E7%94%9F/">半生</a></li>
 		</ul>
 	</div>
 </div>

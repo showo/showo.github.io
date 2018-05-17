@@ -3,19 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>数字化营销课程</title>
+<title>FlaskWeb-抄书二</title>
 <meta name="description" content=" about SEO and SEM">
 <meta name="generator" content="Hugo 0.31.1" />
-<meta property="og:title" content="数字化营销课程" />
-<meta property="og:description" content="数字化营销课程收集整理&#43;简介" />
+<meta property="og:title" content="FlaskWeb-抄书二" />
+<meta property="og:description" content="FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
+ 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
+示例：templates/index.html: Jinja2模板
+&lt;h1&gt;hello，world！&lt;/h1&gt;
+在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
+&lt;h1&gt;hello,{{name}}&lt;/h1&gt;
+3.1.1 渲染模板 &gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
+把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
+from flask improt Flask，render_template #... @app.route(&#39;/&#39;) def index(): return render_template(&#39;index.html&#39;) @app.route(&#39;/user/&lt;name&gt;&#39;) def user(name): return render_template(&#39;user.html&#39;,name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
+3.1.2 变量
+上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
+Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
+&lt;p&gt; a value from a dictionary: {{mydict[&#39;key&#39;]}}.&lt;/p&gt; &lt;p&gt; a value from a list: {{mydict[&#39;key&#39;]}}.&lt;/p&gt; &lt;p&gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&lt;/p&gt; &lt;p&gt; a value from a object&#39;s method: {{myobj." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/" />
+<meta property="og:url" content="https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/" />
 
 
 
-<meta property="article:published_time" content="2018-02-10T15:51:42&#43;08:00"/>
+<meta property="article:published_time" content="2018-05-17T21:42:58&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-02-10T15:51:42&#43;08:00"/>
+<meta property="article:modified_time" content="2018-05-17T21:42:58&#43;08:00"/>
 
 
 
@@ -61,38 +73,106 @@
 <main class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post">
 		<header class="post__header clearfix">
-			<h1 class="post__title">数字化营销课程</h1>
+			<h1 class="post__title">FlaskWeb-抄书二</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2018-02-10T15:51:42">February 10, 2018</time>
+				<time class="post__meta-date" datetime="2018-05-17T21:42:58">May 17, 2018</time>
 				<span class="post__meta-categories meta-categories">
 					<svg class="icon icon-category" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
-					<a class="meta-categories__link" href="/categories/marketing" rel="category">Marketing</a></span>
+					<a class="meta-categories__link" href="/categories/flask" rel="category">Flask</a></span>
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			<p>收集整理一些线上优质的数字化营销课程，涉及搜索引擎、社会化媒体、信息流等。主要内容涵盖基础介绍、操作优化和数据分析等几个部分。</p>
+			
 
-<p></p>
+<h2 id="flaskweb-抄书二">FlaskWeb-抄书二</h2>
 
-<p>1）谷歌线上营销挑战（Google Online Marketing Challenge）：<a href="https://www.google.com/onlinechallenge/">https://www.google.com/onlinechallenge/</a></p>
+<h3 id="第3章-模板">第3章 模板</h3>
 
-<p>2）线上学习资源PPC（WordStream&rsquo;s PPC University）：<a href="https://www.wordstream.com/learn">https://www.wordstream.com/learn</a></p>
+<blockquote>
+<p>模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为<strong>渲染</strong>，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。</p>
+</blockquote>
 
-<p>3）快速入门级数字营销课程：<a href="https://blogs.constantcontact.com/social-media-quickstarter/">https://blogs.constantcontact.com/social-media-quickstarter/</a></p>
+<h4 id="3-1-jinja2模板引擎">3.1 Jinja2模板引擎</h4>
 
-<p>4）提供官方认证的集客营销入门技巧课程：<a href="https://www.udemy.com/inbound-marketing-course/">https://www.udemy.com/inbound-marketing-course/</a></p>
+<p>形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：</p>
 
-<p>5）提供电子商务专业文凭的网络资源社区：<a href="https://alison.com/course/Diploma-in-E-Business">https://alison.com/course/Diploma-in-E-Business</a></p>
+<p>示例：templates/index.html: Jinja2模板</p>
 
-<p>注:<a href="http://www.looooker.com/archives/53014">来源-燕北新媒体</a></p>
+<p><code>&lt;h1&gt;hello，world！&lt;/h1&gt;</code></p>
+
+<p>在前面2-2示例中，是视图函数user()返回的响应中包含一个使用<strong>变量</strong>标识的动态部分。如下示例实现了这个响应。
+示例： templates/user.html:Jinja2模板</p>
+
+<p><code>&lt;h1&gt;hello,{{name}}&lt;/h1&gt;</code></p>
+
+<p>3.1.1 渲染模板
+&gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。</p>
+
+<p>把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html
+程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：</p>
+
+<pre><code>from flask improt Flask，render_template
+
+#...
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/user/&lt;name&gt;')
+def user(name):
+    return render_template('user.html',name=name)
+</code></pre>
+
+<p>Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。</p>
+
+<p>3.1.2 变量</p>
+
+<p>上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。</p>
+
+<p>Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：</p>
+
+<pre><code>&lt;p&gt; a value from a dictionary: {{mydict['key']}}.&lt;/p&gt;
+&lt;p&gt; a value from a list: {{mydict['key']}}.&lt;/p&gt;
+&lt;p&gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&lt;/p&gt;
+&lt;p&gt; a value from a object's method: {{myobj.method()}}.&lt;/p&gt;
+</code></pre>
+
+<p>可以使用过滤器修改变量，过滤器名添加在变量名之后，中间以竖线分隔。
+部分过滤器：<table><tr><th>过滤器名称</th><th>说明</tr><tr><td>safe</td><td>渲染值时不转义</td></tr><tr><td>capitallize</td><td>把值的首字符转换成大写，其他字符转换成小写</td></tr><tr><td>lower</td><td>把值转换成小写形式</td></tr><tr><td>upper</td><td>把值转换成大写形式</td></tr><tr><td>title</td><td>把值中的每个单词的首字符都转换成大写</td></tr><tr><td>trim</td><td>把值的首尾空格去掉</td></tr><tr><td>striptags</td><td>渲染之前把值中所有的HTML标签都删掉</td></tr>
+</table></p>
+
+<p>safe过滤器说下，默认情况下，出于安全考虑，Jinja2会转义所有变量。很多情况下需要显示变量中存储的HTML代码，这时可使用safe过滤器。</p>
+
+<p>3.1.3 控制结构</p>
+
+<p>Jinja2提供了多种控制结构，可用来改变模板的渲染流程。</p>
+
+<p>下面这个例子展示了如何在模板中使用条件控制语句：</p>
+
+<pre><code>{% if user %}
+    Hello,{{ user }}
+{% else %}
+    Hello,Stranger!
+{% endif % }
+</code></pre>
+
+<p>另一种常见的需求是在模板中渲染一组元素。下例展示了如何使用for循环实现这一需求：</p>
+
+<pre><code>&lt;ul&gt;
+    {% for comment in comments %}
+        &lt;li&gt;{{ comment }} &lt;/li&gt;
+    {% endif % }
+&lt;/ul&gt;
+</code></pre>
+
 		</div>
 		
 <div class="post__tags tags clearfix">
 	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
 	<ul class="tags__list">
-		<li class="tags__item"><a class="tags__link" href="/tags/sem/" rel="tag">SEM</a></li>
-		<li class="tags__item"><a class="tags__link" href="/tags/marketing/" rel="tag">marketing</a></li>
+		<li class="tags__item"><a class="tags__link" href="/tags/flask/" rel="tag">Flask</a></li>
 	</ul>
 </div>
 
@@ -112,10 +192,7 @@
 	
 <nav class="post-nav row clearfix" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 	<div class="post-nav__item post-nav__item--prev col-1-2">
-		<a class="post-nav__link" href="/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">hugo搭建博客</p></a>
-	</div>
-	<div class="post-nav__item post-nav__item--next col-1-2">
-		<a class="post-nav__link" href="/post/%E5%8D%8A%E7%94%9F/" rel="next"><span class="post-nav__caption">Next»</span><p class="post-nav__post-title">半生</p></a>
+		<a class="post-nav__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev"><span class="post-nav__caption">«Previous</span><p class="post-nav__post-title">FlaskWeb-抄书(1)</p></a>
 	</div>
 </nav>
 

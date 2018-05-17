@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</loc>
+    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2018-05-09T22:01:22+08:00</lastmod>
   </url>
@@ -54,20 +59,14 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/flask/</loc>
-    <lastmod>2018-05-09T22:01:22+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://showo.github.io/categories/flask/</loc>
-    <lastmod>2018-05-09T22:01:22+08:00</lastmod>
+    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/hugo/</loc>
-    <lastmod>2017-12-02T21:44:50+08:00</lastmod>
+    <loc>https://showo.github.io/tags/flask/</loc>
+    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -78,8 +77,8 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/marketing/</loc>
-    <lastmod>2018-02-10T15:51:42+08:00</lastmod>
+    <loc>https://showo.github.io/tags/hugo/</loc>
+    <lastmod>2017-12-02T21:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -90,8 +89,8 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/others/</loc>
-    <lastmod>2018-04-07T16:08:33+08:00</lastmod>
+    <loc>https://showo.github.io/tags/marketing/</loc>
+    <lastmod>2018-02-10T15:51:42+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -102,8 +101,14 @@
   </url>
   
   <url>
+    <loc>https://showo.github.io/tags/others/</loc>
+    <lastmod>2018-04-07T16:08:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://showo.github.io/post/</loc>
-    <lastmod>2018-05-09T22:01:22+08:00</lastmod>
+    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +138,7 @@
   
   <url>
     <loc>https://showo.github.io/</loc>
-    <lastmod>2018-05-09T22:01:22+08:00</lastmod>
+    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
     <priority>0</priority>
   </url>
   

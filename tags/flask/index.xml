@@ -6,13 +6,34 @@
     <description>Recent content in Flask on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 May 2018 22:01:22 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 21:42:58 +0800</lastBuildDate>
     
 	<atom:link href="https://showo.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>FlaskWeb-抄书</title>
+      <title>FlaskWeb-抄书二</title>
+      <link>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</link>
+      <pubDate>Thu, 17 May 2018 21:42:58 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</guid>
+      <description>FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
+ 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
+示例：templates/index.html: Jinja2模板
+&amp;lt;h1&amp;gt;hello，world！&amp;lt;/h1&amp;gt;
+在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
+&amp;lt;h1&amp;gt;hello,{{name}}&amp;lt;/h1&amp;gt;
+3.1.1 渲染模板 &amp;gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
+把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
+from flask improt Flask，render_template #... @app.route(&#39;/&#39;) def index(): return render_template(&#39;index.html&#39;) @app.route(&#39;/user/&amp;lt;name&amp;gt;&#39;) def user(name): return render_template(&#39;user.html&#39;,name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
+3.1.2 变量
+上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
+Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
+&amp;lt;p&amp;gt; a value from a dictionary: {{mydict[&#39;key&#39;]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a list: {{mydict[&#39;key&#39;]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a object&#39;s method: {{myobj.</description>
+    </item>
+    
+    <item>
+      <title>FlaskWeb-抄书(1)</title>
       <link>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 09 May 2018 22:01:22 +0800</pubDate>
       
