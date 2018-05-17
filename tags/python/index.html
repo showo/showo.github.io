@@ -82,17 +82,17 @@ import os.path
 import glob
 
 def conver(jpgfile,outdir,width=600,height=400):
-	img=Image.open(jpgfile)
-	img=img.convert('RGB') #将GIF,png等格式转换为jpg
-	try:	
-		new_img=img.resize((width,height))
-		new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
-		print(os.path.basename(jpgfile))
-	except Exception as e:
-			print(e)
+    img=Image.open(jpgfile)
+    img=img.convert('RGB') #将GIF,png等格式转换为jpg
+    try:
+        new_img=img.resize((width,height))
+        new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+        print(os.path.basename(jpgfile))
+    except Exception as e:
+        print(e)
 				
 for jpgfile in glob.glob(&quot;./test1/*.jpg&quot;):
-	conver(jpgfile,&quot;./test2/&quot;)
+    conver(jpgfile,&quot;./test2/&quot;)
 
 </code></pre>
 
@@ -123,27 +123,28 @@ for jpgfile in glob.glob(&quot;./test1/*.jpg&quot;):
 import requests,time
 
 def getUrl(filepath):
-	with open(filepath,'r') as f:
+    with open(filepath,'r') as f:
 	    f=f.readlines()
 	    return f
 
 def getHtml(url):
-	try:
-	    r=requests.get(url)
-	    r.raise_for_status()
-	    r.encoding=r.apparent_eccoding
-	    return r.text
-	except:
-	    return &quot;&quot;
+    try:
+        r=requests.get(url)
+        r.raise_for_status()
+        r.encoding=r.apparent_eccoding
+        return r.text
+    except:
+        return &quot;&quot;
 
 def isindex(link):
     url=link.replace(&quot;http://&quot;,&quot;&quot;).replace(&quot;/&quot;,&quot;%2F&quot;)
     url=&quot;http://www.baidu.com/s?wd=&quot;+url
     html=getHtml(url)
     if &quot;很抱歉，没有找到与&quot; in html or &quot;没有找到该URL&quot; in    html:
-	    print(link,&quot;未收录&quot;)
-	else:
-	    print(link,&quot;收录&quot;)
+        print(link,&quot;未收录&quot;)
+	
+    else:
+        print(link,&quot;收录&quot;)
 
 def main():
 	filepath=&quot;&quot;

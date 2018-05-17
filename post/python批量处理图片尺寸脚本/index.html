@@ -83,17 +83,17 @@ import os.path
 import glob
 
 def conver(jpgfile,outdir,width=600,height=400):
-	img=Image.open(jpgfile)
-	img=img.convert('RGB') #将GIF,png等格式转换为jpg
-	try:	
-		new_img=img.resize((width,height))
-		new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
-		print(os.path.basename(jpgfile))
-	except Exception as e:
-			print(e)
+    img=Image.open(jpgfile)
+    img=img.convert('RGB') #将GIF,png等格式转换为jpg
+    try:
+        new_img=img.resize((width,height))
+        new_img.save(os.path.join(outdir,os.path.basename(jpgfile)))
+        print(os.path.basename(jpgfile))
+    except Exception as e:
+        print(e)
 				
 for jpgfile in glob.glob(&quot;./test1/*.jpg&quot;):
-	conver(jpgfile,&quot;./test2/&quot;)
+    conver(jpgfile,&quot;./test2/&quot;)
 
 </code></pre>
 
