@@ -2,42 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on knows</title>
-    <link>https://showo.github.io/post/</link>
+    <link>https://www.showo.github.io/post/</link>
     <description>Recent content in Posts on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 May 2018 21:42:58 +0800</lastBuildDate>
     
-	<atom:link href="https://showo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.showo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FlaskWeb-抄书二</title>
-      <link>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</link>
+      <link>https://www.showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</link>
       <pubDate>Thu, 17 May 2018 21:42:58 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</guid>
-      <description>FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
- 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
-示例：templates/index.html: Jinja2模板
-&amp;lt;h1&amp;gt;hello，world！&amp;lt;/h1&amp;gt;
-在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
-&amp;lt;h1&amp;gt;hello,{{name}}&amp;lt;/h1&amp;gt;
-3.1.1 渲染模板 &amp;gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
-把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
-from flask improt Flask，render_template #... @app.route(&#39;/&#39;) def index(): return render_template(&#39;index.html&#39;) @app.route(&#39;/user/&amp;lt;name&amp;gt;&#39;) def user(name): return render_template(&#39;user.html&#39;,name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
-3.1.2 变量
-上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
-Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
-&amp;lt;p&amp;gt; a value from a dictionary: {{mydict[&#39;key&#39;]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a list: {{mydict[&#39;key&#39;]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt; a value from a object&#39;s method: {{myobj.</description>
+      <guid>https://www.showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</guid>
+      <description>&lt;h2 id=&#34;flaskweb-抄书二&#34;&gt;FlaskWeb-抄书二&lt;/h2&gt;
+
+&lt;h3 id=&#34;第3章-模板&#34;&gt;第3章 模板&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为&lt;strong&gt;渲染&lt;/strong&gt;，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;3-1-jinja2模板引擎&#34;&gt;3.1 Jinja2模板引擎&lt;/h4&gt;
+
+&lt;p&gt;形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：&lt;/p&gt;
+
+&lt;p&gt;示例：templates/index.html: Jinja2模板&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello，world！&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在前面2-2示例中，是视图函数user()返回的响应中包含一个使用&lt;strong&gt;变量&lt;/strong&gt;标识的动态部分。如下示例实现了这个响应。
+示例： templates/user.html:Jinja2模板&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello,{{name}}&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>FlaskWeb-抄书(1)</title>
-      <link>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
+      <link>https://www.showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 09 May 2018 22:01:22 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://www.showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;h2 id=&#34;flask-web-抄书-1&#34;&gt;Flask Web-抄书(1)&lt;/h2&gt;
 
 &lt;blockquote&gt;
@@ -48,8 +57,9 @@ Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类�
 
 &lt;h4 id=&#34;1-安装虚拟环境&#34;&gt;1.安装虚拟环境&lt;/h4&gt;
 
-&lt;p&gt;1.1 前提：虚拟环境由第三方工具virtualenv创建
-1.2 步骤：&lt;/p&gt;
+&lt;p&gt;1.1 前提：虚拟环境由第三方工具virtualenv创建&lt;/p&gt;
+
+&lt;p&gt;1.2 步骤：&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python中安装virtualenv工具，在cmd环境中执行&lt;strong&gt;pip install virtualenv&lt;/strong&gt;命令&lt;/li&gt;
@@ -63,10 +73,10 @@ Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类�
     
     <item>
       <title>Python在SEO方面的脚本</title>
-      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
+      <link>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 22 Apr 2018 22:47:16 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
       <description>&lt;h3 id=&#34;一-python-pillow批量处理图片尺寸&#34;&gt;一.python+pillow批量处理图片尺寸&lt;/h3&gt;
 
 &lt;p&gt;1.&lt;a href=&#34;https://blog.csdn.net/atyzy/article/details/77905463&#34;&gt;来源-csdn&lt;/a&gt;&lt;/p&gt;
@@ -98,10 +108,10 @@ for jpgfile in glob.glob(&amp;quot;./test1/*.jpg&amp;quot;):
     
     <item>
       <title>Python批量脚本收集</title>
-      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
+      <link>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
       <pubDate>Tue, 10 Apr 2018 22:22:51 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
+      <guid>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
       <description>&lt;p&gt;1.批量查询百度收录-python脚本
 来源：&lt;a href=&#34;http://www.niumou.com.cn/61&#34;&gt;老丁学习笔记&lt;/a&gt;&lt;/p&gt;
 
@@ -155,30 +165,30 @@ if __name__=&#39;__mian__&#39;:
     
     <item>
       <title>生活片段</title>
-      <link>https://showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</link>
+      <link>https://www.showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</link>
       <pubDate>Sat, 07 Apr 2018 16:08:33 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</guid>
+      <guid>https://www.showo.github.io/post/%E7%94%9F%E6%B4%BB%E7%89%87%E6%AE%B5/</guid>
       <description>&lt;p&gt;莫名的烦躁，就像是溺水一样的焦虑在这个春天的午后显得尤为强烈。我一直是个积极的懒惰者，随时战术勤奋战略消极吧，虽然花费了大量的时间用在改善自己的技能上，但实际并没有什么卵用，时间的推移必然出现消极反馈。
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>半生</title>
-      <link>https://showo.github.io/post/%E5%8D%8A%E7%94%9F/</link>
+      <link>https://www.showo.github.io/post/%E5%8D%8A%E7%94%9F/</link>
       <pubDate>Sun, 11 Feb 2018 23:09:09 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/%E5%8D%8A%E7%94%9F/</guid>
+      <guid>https://www.showo.github.io/post/%E5%8D%8A%E7%94%9F/</guid>
       <description>&lt;p&gt;第一次看到这首诗觉得非常的惊艳，觉得一个人的感觉完全可以被文字给撑开。人生有涯，诗歌无界。这首诗是从&lt;a href=&#34;http://blog.sina.com.cn/s/blog_657d22b80100lvkj.html&#34;&gt;葛巾玉版&lt;/a&gt;的新浪博客上转载而来，原作者不明。希望你像我一样喜欢。
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>数字化营销课程</title>
-      <link>https://showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</link>
+      <link>https://www.showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</link>
       <pubDate>Sat, 10 Feb 2018 15:51:42 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</guid>
+      <guid>https://www.showo.github.io/post/%E6%95%B0%E5%AD%97%E5%8C%96%E8%90%A5%E9%94%80%E8%AF%BE%E7%A8%8B/</guid>
       <description>&lt;p&gt;收集整理一些线上优质的数字化营销课程，涉及搜索引擎、社会化媒体、信息流等。主要内容涵盖基础介绍、操作优化和数据分析等几个部分。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -186,11 +196,11 @@ if __name__=&#39;__mian__&#39;:
     
     <item>
       <title>hugo搭建博客</title>
-      <link>https://showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://www.showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 02 Dec 2017 21:44:50 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://showo.github.io/img/article/inspiration-banner.png&#34; alt=&#34;&#34; /&gt;
+      <guid>https://www.showo.github.io/post/hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.showo.github.io/img/article/inspiration-banner.png&#34; alt=&#34;&#34; /&gt;
 这事一篇关于hugo生成博客及安装在GitHub上实现GitHub pages效果博客的文章，流程及步骤简单极易上手。现在的问题是主题下的说明文档内容较少，需要到gohugo.io查找相关的标准。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

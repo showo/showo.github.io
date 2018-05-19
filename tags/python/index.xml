@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on knows</title>
-    <link>https://showo.github.io/tags/python/</link>
+    <link>https://www.showo.github.io/tags/python/</link>
     <description>Recent content in Python on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Apr 2018 22:47:16 +0800</lastBuildDate>
     
-	<atom:link href="https://showo.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.showo.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python在SEO方面的脚本</title>
-      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
+      <link>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 22 Apr 2018 22:47:16 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/</guid>
       <description>&lt;h3 id=&#34;一-python-pillow批量处理图片尺寸&#34;&gt;一.python+pillow批量处理图片尺寸&lt;/h3&gt;
 
 &lt;p&gt;1.&lt;a href=&#34;https://blog.csdn.net/atyzy/article/details/77905463&#34;&gt;来源-csdn&lt;/a&gt;&lt;/p&gt;
@@ -48,10 +48,10 @@ for jpgfile in glob.glob(&amp;quot;./test1/*.jpg&amp;quot;):
     
     <item>
       <title>Python批量脚本收集</title>
-      <link>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
+      <link>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
       <pubDate>Tue, 10 Apr 2018 22:22:51 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
+      <guid>https://www.showo.github.io/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
       <description>&lt;p&gt;1.批量查询百度收录-python脚本
 来源：&lt;a href=&#34;http://www.niumou.com.cn/61&#34;&gt;老丁学习笔记&lt;/a&gt;&lt;/p&gt;
 

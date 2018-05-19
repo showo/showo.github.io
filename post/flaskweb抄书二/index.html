@@ -7,21 +7,30 @@
 <meta name="description" content=" about SEO and SEM">
 <meta name="generator" content="Hugo 0.31.1" />
 <meta property="og:title" content="FlaskWeb-抄书二" />
-<meta property="og:description" content="FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
- 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
+<meta property="og:description" content="FlaskWeb-抄书二
+
+第3章 模板
+
+
+模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
+
+
+3.1 Jinja2模板引擎
+
+形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
+
 示例：templates/index.html: Jinja2模板
+
 &lt;h1&gt;hello，world！&lt;/h1&gt;
-在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
+
+在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。
+示例： templates/user.html:Jinja2模板
+
 &lt;h1&gt;hello,{{name}}&lt;/h1&gt;
-3.1.1 渲染模板 &gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
-把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
-from flask improt Flask，render_template #... @app.route(&#39;/&#39;) def index(): return render_template(&#39;index.html&#39;) @app.route(&#39;/user/&lt;name&gt;&#39;) def user(name): return render_template(&#39;user.html&#39;,name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
-3.1.2 变量
-上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
-Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
-&lt;p&gt; a value from a dictionary: {{mydict[&#39;key&#39;]}}.&lt;/p&gt; &lt;p&gt; a value from a list: {{mydict[&#39;key&#39;]}}.&lt;/p&gt; &lt;p&gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&lt;/p&gt; &lt;p&gt; a value from a object&#39;s method: {{myobj." />
+
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/" />
+<meta property="og:url" content="https://www.showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/" />
 
 
 
@@ -83,9 +92,7 @@ Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类�
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			
-
-<h2 id="flaskweb-抄书二">FlaskWeb-抄书二</h2>
+			<h2 id="flaskweb-抄书二">FlaskWeb-抄书二</h2>
 
 <h3 id="第3章-模板">第3章 模板</h3>
 
@@ -105,6 +112,8 @@ Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类�
 示例： templates/user.html:Jinja2模板</p>
 
 <p><code>&lt;h1&gt;hello,{{name}}&lt;/h1&gt;</code></p>
+
+<p></p>
 
 <p>3.1.1 渲染模板
 &gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。</p>
@@ -167,6 +176,85 @@ def user(name):
 &lt;/ul&gt;
 </code></pre>
 
+<p>Jinja2还支持宏，宏类似与python中的函数：</p>
+
+<pre><code>{% macro render_comment(comment) %}
+    &lt;li&gt;{{ comment }}&lt;/li&gt;
+{% endmacro %}
+
+&lt;ul&gt;
+    {% fro comment in comments %}
+        {{ render_comment(comment) }}
+    {% endfor %}
+&lt;/ul&gt;
+
+</code></pre>
+
+<p>为了重复的使用宏，我们可以将它保存在单独的文件中，然后在需要的模板中导入：</p>
+
+<pre><code>{% import 'macro.html' as macro %}
+&lt;ul&gt;
+    {% for comment in comments %}
+        {{ macro.render_comment(coment) }}
+    {% endfor %}
+&lt;/ul&gt;
+
+</code></pre>
+
+<p>需要在多处重复使用的模板代码片段可以写入单独的文件，再包含在所有的模板中，以避免重复：</p>
+
+<p><code>{% include 'comment.html' %}</code></p>
+
+<p>另一种重复使用代码的强大方式是模板继承，它类似于python代码中的类继承。首先，创建一个名为base.html的基模板：</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    {% block head %}
+    &lt;title&gt;{% block title %}{% endblock %} - My applications &lt;/title&gt;
+    {% endblock %}
+&lt;/head&gt;
+&lt;body&gt;
+    {% block body %}
+    {% endblock %}
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+<p>block标签定义的元素刻在衍生模板中修改。下面这个示例是基模板的衍生模板：</p>
+
+<pre><code>{% extends &quot;base.html&quot; %}
+{% block title %}Index{% endblokc %}
+{% block head %}
+    {{super()}}
+    &lt;style&gt;
+    &lt;/style&gt;
+{% endblokc %}
+{% blokc body %}
+&lt;h1&gt;hello,world&lt;/h1&gt;
+{% endblock %}
+
+</code></pre>
+
+<p>extends指令声明这个模板衍生自base.html。在extends指令之后，基模板中的3个块被重新定义，模板引擎会将其插入适当的位置。注意新定义的head块，在基模板中其内容不是空的，所以使用super()获取原来的内容。</p>
+
+<h4 id="3-2-使用flask-bootstrap集成twitter-bootstrap">3.2 使用Flask-Bootstrap集成Twitter Bootstrap</h4>
+
+<p>Bootstrap是客户端框架，因为不会直接涉及服务器。服务器需要做的只是提供引用了Bootstrap层叠样式表CSS和JavaScript文件的HTML响应，并在HTML、CSS、JavaScript代码中实例化所需组件。</p>
+
+<p>要想在程序中集成Bootstrap，一是在模板中进行更改；二是使用Flask-Bootstrap扩展。
+使用pip安装：</p>
+
+<p>` (venv) d:\learnfla&gt; pip install flask-bootstrap &lsquo;</p>
+
+<p>Flask扩展一般都在创建程序实例时初始化。如下是Flask-Bootstrap初始化方法：
+示例 hello.py</p>
+
+<pre><code>from flask.ext.bootstrap import Bootstrap
+#...
+
+bootstrap=Bootstrap(app)
+</code></pre>
 		</div>
 		
 <div class="post__tags tags clearfix">

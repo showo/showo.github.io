@@ -9,7 +9,7 @@
 <meta property="og:title" content="Flask" />
 <meta property="og:description" content=" about SEO and SEM" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://showo.github.io/tags/flask/" />
+<meta property="og:url" content="https://www.showo.github.io/tags/flask/" />
 
 
 
@@ -26,7 +26,7 @@
 
 <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-<link rel="alternate" type="application/rss+xml" title="knows Feed" href="https://showo.github.io/tags/flask/index.xml">
+<link rel="alternate" type="application/rss+xml" title="knows Feed" href="https://www.showo.github.io/tags/flask/index.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="/js/scripts.js"></script>
@@ -70,19 +70,28 @@
 			</div>
 		</header>
 		<div class="list__excerpt">
-			FlaskWeb-抄书二 第3章 模板  模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为渲染，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。
- 3.1 Jinja2模板引擎 形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：
-示例：templates/index.html: Jinja2模板
-&lt;h1&gt;hello，world！&lt;/h1&gt;
-在前面2-2示例中，是视图函数user()返回的响应中包含一个使用变量标识的动态部分。如下示例实现了这个响应。 示例： templates/user.html:Jinja2模板
-&lt;h1&gt;hello,{{name}}&lt;/h1&gt;
-3.1.1 渲染模板 &gt; 默认情况下，Flask在程序文件夹中的templates子文件夹中寻找模板。
-把前面的两个模板保存在templates文件夹中，并分别命名为index.html和user.html 程序中的视图函数需要修改一下，以便渲染这些模板。修改方法如下：
-from flask improt Flask，render_template #... @app.route('/') def index(): return render_template('index.html') @app.route('/user/&lt;name&gt;') def user(name): return render_template('user.html',name=name)  Flask提供render_template函数把Jinja2模板引擎集成到了程序中。render_template函数第一个参数是模板文件名，随后的参数是键值对，标识模板中的变量对应的真实值。
-3.1.2 变量
-上个模板中的使用的{{name}}结构表示一个变量，它是一种特殊的占位符，告诉模板引擎这个位置的值从渲染模板时使用的数据中获取。
-Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类型。在模板中使用变量的一些示例如下：
-&lt;p&gt; a value from a dictionary: {{mydict['key']}}.&lt;/p&gt; &lt;p&gt; a value from a list: {{mydict['key']}}.&lt;/p&gt; &lt;p&gt; a value from a list,with a variable index: {{mydict[myintvar]}}.&lt;/p&gt; &lt;p&gt; a value from a object's method: {{myobj.
+			<h2 id="flaskweb-抄书二">FlaskWeb-抄书二</h2>
+
+<h3 id="第3章-模板">第3章 模板</h3>
+
+<blockquote>
+<p>模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为<strong>渲染</strong>，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。</p>
+</blockquote>
+
+<h4 id="3-1-jinja2模板引擎">3.1 Jinja2模板引擎</h4>
+
+<p>形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：</p>
+
+<p>示例：templates/index.html: Jinja2模板</p>
+
+<p><code>&lt;h1&gt;hello，world！&lt;/h1&gt;</code></p>
+
+<p>在前面2-2示例中，是视图函数user()返回的响应中包含一个使用<strong>变量</strong>标识的动态部分。如下示例实现了这个响应。
+示例： templates/user.html:Jinja2模板</p>
+
+<p><code>&lt;h1&gt;hello,{{name}}&lt;/h1&gt;</code></p>
+
+<p></p>
 		</div>
 		<div class="list__footer">
 			<a class="list__footer-readmore btn" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">Read more…</a>
@@ -111,8 +120,9 @@ Jinja2能识别所有类型的变量，甚至是列表、字典等复杂的类�
 
 <h4 id="1-安装虚拟环境">1.安装虚拟环境</h4>
 
-<p>1.1 前提：虚拟环境由第三方工具virtualenv创建
-1.2 步骤：</p>
+<p>1.1 前提：虚拟环境由第三方工具virtualenv创建</p>
+
+<p>1.2 步骤：</p>
 
 <ul>
 <li>python中安装virtualenv工具，在cmd环境中执行<strong>pip install virtualenv</strong>命令</li>
