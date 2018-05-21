@@ -30,7 +30,7 @@ python中安装virtualenv工具，在cmd环境中执行pip install virtualenv命
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
+<meta property="og:url" content="https://showo.github.io/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" />
 
 
 
@@ -373,13 +373,13 @@ Flask-Script为Flask程序添加了一个命令行解析器。</p>
 
 <p>示例，使用Flask-Script</p>
 
-<pre><code>from flask.ext.script import Manager
+<pre><code>from flask_script import Manager
 from flask import Flask
 
 app=Flask(__name__)
 manager=Manager(app)
 
-@manager.command
+@app.route('/')
 def index():
     return '&lt;h1&gt;hello,world&lt;/h1&gt;'
 
@@ -389,11 +389,42 @@ if __name__=='__main__':
 
 </code></pre>
 
+<p>这样修改之后，程序可以使用一组基本的命令行选项。现在运行&rsquo;python hello.py&rsquo;，会显示一个用法消息：</p>
+
+<pre><code>(venv) d:learnfla&gt;python hello.py
+usage: hello.py [-h] {shell,runserver}...
+
+positional arguments:
+  {shell,runserver}
+    sehell     # 在flask应用上下文中运行python shell
+    runserver  # 运行flask开发服务器：app.run()
+
+optional arguments:
+  -h, --help  # 显示帮助信息并退出
+
+</code></pre>
+
+<p>&ndash;host是一个很有用的选项，它告诉web服务器在哪个网络接口上坚挺来自客户端的连接。默认情况下，Flask开发web服务器坚挺localhost上的连接，所以只接受来自服务器所在计算机发起的连接。下述命令让web服务器坚挺公共网络接口上的连接，允许同一网络中的其他计算机连接服务器：</p>
+
+<pre><code>(venv) d:learnfla&gt;python hello.py runserver --host:0.0.0.0
+* Running on http://0.0.0.0:5000/
+* Restarting with reloader
+</code></pre>
+
+<p>现在，web服务器可使用<code>http://a.b.c.d:5000/</code>网络中的任一台电脑进行访问，其中a.b.c.d是服务器所在计算机的外网ip地址。</p>
+
+<hr />
+
+<p>递进1：</p>
+
 <p>这个地方没看懂，</p>
 
 <p>资料1：<a href="https://blog.csdn.net/bestallen/article/details/52249603">https://blog.csdn.net/bestallen/article/details/52249603</a></p>
 
 <p>资料2：<a href="https://my.oschina.net/lijsf/blog/158828">https://my.oschina.net/lijsf/blog/158828</a></p>
+
+<p>递进2：
+2018.5.21日晚10时，放松心情看，改了几次，实现书上的效果。</p>
 		</div>
 		
 <div class="post__tags tags clearfix">
