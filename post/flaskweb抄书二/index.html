@@ -245,16 +245,117 @@ def user(name):
 <p>要想在程序中集成Bootstrap，一是在模板中进行更改；二是使用Flask-Bootstrap扩展。
 使用pip安装：</p>
 
-<p>` (venv) d:\learnfla&gt; pip install flask-bootstrap &lsquo;</p>
+<p><code>(venv) d:\learnfla&gt; pip install flask-bootstrap</code>h</p>
 
 <p>Flask扩展一般都在创建程序实例时初始化。如下是Flask-Bootstrap初始化方法：
 示例 hello.py</p>
 
-<pre><code>from flask.ext.bootstrap import Bootstrap
+<pre><code>from flask_ibootstrap import Bootstrap
 #...
 
 bootstrap=Bootstrap(app)
 </code></pre>
+
+<p>初始化Flask-Bootstrap后，就可以在程序中使用一个包含所有Bootstrap文件的基模板。这个模板利用Jinja2模板继承机制，让程序扩展一个具有基本页面结构的基模板，其中就有用来引入Bootstrap的元素。示例3-5是把user.html改写为衍生模板后的新模板。
+示例3-5 templates/user.html:使用Flask-Bootstrap的模板：</p>
+
+<pre><code>{%extends &quot;bootstrap/base.html&quot; %}
+
+{%block title %}Flask{%endblock%}
+
+{%block navbar %}
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot; &gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+                &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+           &lt;/button&gt;
+           &lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Flask&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;page-header&quot;&gt;
+        &lt;h1&gt;Hello,{{name}}&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{%endblock %}
+</code></pre>
+
+<p>Jinja2中的extends指令从Flask-Bootstrap中导入bootstrap/base.html，从而实现模板继承。Flask-Bootstrap中的基模板提供了一个网页框架，引入了Bootstrap中的所有CSS和JavaScript文件。
+基模板中定义了刻在衍生模板中重定义的块。</p>
+
+<p>基模板定义了可在衍生模板中重定义的块。block和endblock指令定义的块中的内容可添加到基模板中。</p>
+
+<p>上面的user.html模板定义了3个模块，分别为title，navbar，content。这些块都基模板提供的，刻在衍生模板中重新定义。</p>
+
+<p>Flask-Bootstrap的base.html模板还定义了很多其他块，都可在衍生模板中使用。表3-2列出了所有可用的块。</p>
+
+<p><strong>Flask-Bootstrap基模板中定义的块</strong>
+<table><tr><th>块名</th><th>说明</th></tr><tr><td>doc</td><td>整个HTML文档</td></tr><tr><td>html_attribs</td><td>html标签的属性</td></tr><tr><td>html</td><td>html标签中的内容</td></tr><tr><td>head</td><td>head标签中的内容</td></tr><tr><td>title</td><td>title标签中的内容 </td></tr><tr><td>metas</td><td>一组meta标签</td></tr><tr><td>styles</td><td>层叠样式表定义</td></tr><tr><td>body_attribs</td><td>body标签的属性</td></tr><tr><td>body</td><td>body标签中的内容</td></tr><tr><td>navbar</td><td>用户定义的导航条</td></tr><tr><td>content</td><td>用户定义的页面内容</td></tr><tr><td>scripts</td><td>文档底部的JavaScript声明</td></tr></table></p>
+
+<p>上表中的很多块都是Flask-Bootstrap自用的，如果直接定义可能会导致一些问题。例如，Bootstrap所需的文件再styles和scripts块中的声明。如果程序需要向已经有内容的块中添加新内容，必须使用Jianja2提供的super()函数。
+如果要在衍生模板中添加新的JavaScript文件，需要这么定义scripts块：</p>
+
+<pre><code>{% block scripts %}
+{{ super()}}
+&lt;script type=&quot;text/javascript&quot; src=&quot;my-script.js&quot;&gt;&lt;/script&gt;
+{%endblock %}
+</code></pre>
+
+<h4 id="3-2-自定义错误页面">3.2 自定义错误页面</h4>
+
+<p>像常规路由一样，Flask允许程序使用基于模板的自定义错误页面。最常见的错误代码有两个：404，500。
+指定自定义程序代码：</p>
+
+<pre><code>@app.route(404):
+def page_not_found(e):
+    return render_template('404.html'),404
+
+
+@app.route(500)
+def internal_server_error(e):
+    return render_template('500.html'),500
+</code></pre>
+
+<p>和视图函数一样，错误处理程序也会返回响应。它们还返回与错误对应的数字状态码。
+错误处理程序中引用的模板也需要编写。编写这些模板最直观的方法是复制templates/404.html，分别在templates文件夹下创建404.html和500.html，然后把这两个文件中的页面头部元素改为相应的错误信息。但这种方法会带来很多重复劳动。</p>
+
+<p>Jinja2的模板继承机制可以帮助我们解决这个问题。
+templates/base.html模板中的content块中只有1个<div>容器,其中包含了一个名为page_content的新空块，块中的内容由衍生模板定义。</p>
+
+<p>通过集成templates/base.html模板编写自定义的404错误页面，示例：</p>
+
+<pre><code>{%extends 'base.html' %}
+{% block title%}Flask-Page Not found{%endblock%}
+{%block page_content %}
+&lt;div class=&quot;page-header&quot;&gt;
+    &lt;h1&gt;Not Found&lt;/h1&gt;
+&lt;/div&gt;
+{%endblokc%}
+</code></pre>
+
+<h4 id="3-4-链接">3.4 链接</h4>
+
+<p>任何具有多个路由的程序都需要可以连接不同页面的链接，例如导航条。
+在模板中直接编写简单路由的URL链接不难，但对于包含可变部分的动态路由，在模板中构建正确的URL就很困难。而且直接编写URL会对代码中定义IDE路由产生不必要的依赖关系。如果重新定义路由，模板中的链接可能会失效。</p>
+
+<p>为了避免这些问题，Flask提供了url_for()辅助函数,它可以使用程序URL映射中保存的信息生成URL。</p>
+
+<p>url_for()函数最简单的用法是以视图函数名(或者app.add_url_route()定义路由时使用的端点名)作为参数，返回对应的URL。例如，在当前版本的hello.py程序中调用url_for(&lsquo;index&rsquo;)得到的结果是/。调用url_for(&lsquo;index&rsquo;,external=True)返回的则是绝对地址，在这个示例中是<code>http://localhost:5000/</code>。</p>
+
+<h4 id="3-5静态文件">3.5静态文件</h4>
 		</div>
 		
 <div class="post__tags tags clearfix">
