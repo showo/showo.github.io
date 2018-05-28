@@ -356,6 +356,76 @@ templates/base.html模板中的content块中只有1个<div>容器,其中包含�
 <p>url_for()函数最简单的用法是以视图函数名(或者app.add_url_route()定义路由时使用的端点名)作为参数，返回对应的URL。例如，在当前版本的hello.py程序中调用url_for(&lsquo;index&rsquo;)得到的结果是/。调用url_for(&lsquo;index&rsquo;,external=True)返回的则是绝对地址，在这个示例中是<code>http://localhost:5000/</code>。</p>
 
 <h4 id="3-5静态文件">3.5静态文件</h4>
+
+<p>Web程序不是仅由python代码和模板组成。大多数程序还会使用静态文件，例如HTML代码中引用的图片、JavaScript源码文件和CSS。</p>
+
+<p>默认设置下，Flask在程序根目录中名为static的子目录中寻找静态文件。如果需要，刻在static文件夹中使用子文件夹存放文件。服务器收到前面那个URL后，会生成一个响应，包含文件系统中static/css/style.css文件的内容。</p>
+
+<p>如何在程序的基模板中放置favicon.ico图标。
+示例： templates/base.html:定义收藏夹图标</p>
+
+<pre><code>{{%block head%}}
+{{super()}}
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;{{url_for('static',filename='favicon.ico')}}&quot; type=&quot;image/x-icon&quot;&gt;
+
+&lt;link rel=&quot;icon&quot; href=&quot;{{ url_for('static',filename='favicon.ico') }}&quot; type=&quot;image/x-icon&quot;
+
+{%endblock%}
+</code></pre>
+
+<p>图标的声明会插入head块的末尾。</p>
+
+<h4 id="3-6-使用flask-monmet本地化日期和时间">3.6 使用Flask-Monmet本地化日期和时间</h4>
+
+<p>有一个使用JavaScript开发的客户端开源代码库，名为moment.js，它可以在浏览器中渲染时间和日期。Flask-Moment是一个Flask程序扩展，能把moment.js集成到Jinja2模板中。</p>
+
+<p>Flask-Moment可以使用pip进行安装。</p>
+
+<p>示例，hello.py,初始化Flask-Moment：</p>
+
+<pre><code>from flask_moment import Moment
+moment=Moment(app)
+
+</code></pre>
+
+<p>除了moment.js，Flask-Moment还依赖jquery.js。要在HTML文档中引入这两个库，可以直接引入，这样可以选择使用哪个版本，也可以使用扩展提供的辅助函数，从内容分发网络(content delivery network，CDN)中引入通过测试的版本。Bootstrap已经引入了jquery.js，因此只需要引入moment.js即可。</p>
+
+<p>示例，在基模板的scripts块中引入这个库：</p>
+
+<p>templates/base.html：引入moment.js库,</p>
+
+<pre><code>{% block scripts %}
+{{super()}}
+{{moment.include_moment()}}
+{%endblock%}
+</code></pre>
+
+<p>为了处理时间戳，Flask-Moment向模板开放了moment类。下面的示例中的代码把变量current_time传入模板进行渲染。</p>
+
+<p>示例，hello.py，加入一个datetime变量</p>
+
+<pre><code>from  datetime import datetime
+
+@app.route('/')
+def index():
+    return render_template('index.html',current_time=datetime.utcnow())
+
+
+</code></pre>
+
+<p>以下示例展示了如何在模板中渲染current_time。</p>
+
+<p>templates/index.html: 使用Flask-Moment渲染时间戳</p>
+
+<pre><code>&lt;p&gt;The local date and time is {{ moment(current_time).format('LLL')}}.&lt;/p&gt;
+
+&lt;p&gt;That was {{ moment(current_time).fromNow(refresh=True) }} &lt;/p&gt;
+
+</code></pre>
+
+<p>format(&lsquo;LLL&rsquo;)根据客户端电脑中的时区和区域设置渲染日期和时间。参数决定了渲染的方式，&rsquo;L&rsquo;到&rsquo;LLL&rsquo;分别对应不同的复杂度。format()函数还可接受自定义的格式说明符。</p>
+
+<p>第二行中的fromNow()渲染相对时间戳，而且会随着时间的推移自动刷新显示的时间。这个时间戳最开始显示为“a few seconds ago”，但指定refresh参数后，其内容会随着时间的推移而更新。如果一直待在这个页面，几分钟后，会看到显示的文本变成&rdquo;a minute ago&rdquo; &ldquo;2 minute ago&rdquo;等。</p>
 		</div>
 		
 <div class="post__tags tags clearfix">
