@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/</loc>
+    <lastmod>2018-05-28T22:17:43+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</loc>
     <lastmod>2018-05-17T21:42:58+08:00</lastmod>
   </url>
@@ -60,13 +65,13 @@
   
   <url>
     <loc>https://showo.github.io/tags/flask/</loc>
-    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
+    <lastmod>2018-05-28T22:17:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://showo.github.io/categories/flask/</loc>
-    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
+    <lastmod>2018-05-28T22:17:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -108,7 +113,7 @@
   
   <url>
     <loc>https://showo.github.io/post/</loc>
-    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
+    <lastmod>2018-05-28T22:17:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -138,7 +143,7 @@
   
   <url>
     <loc>https://showo.github.io/</loc>
-    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
+    <lastmod>2018-05-28T22:17:43+08:00</lastmod>
     <priority>0</priority>
   </url>
   

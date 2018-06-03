@@ -6,10 +6,32 @@
     <description>Recent content in Flask on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 May 2018 21:42:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 May 2018 22:17:43 +0800</lastBuildDate>
     
 	<atom:link href="https://showo.github.io/categories/flask/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FlaskWeb 抄书三</title>
+      <link>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/</link>
+      <pubDate>Mon, 28 May 2018 22:17:43 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/</guid>
+      <description>&lt;h2 id=&#34;flaskweb-抄书四&#34;&gt;FlaskWeb-抄书四&lt;/h2&gt;
+
+&lt;h3 id=&#34;第4章-web表单&#34;&gt;第4章 Web表单&lt;/h3&gt;
+
+&lt;p&gt;Flask-WTF扩展可以处理web表单，这个扩展对独立的WTFForms包进行了包装，方便集成到Flask程序中。&lt;/p&gt;
+
+&lt;p&gt;Flask-WTF及其依赖可使用pip安装：
+(venv)d:learnfla&amp;gt;pip install flask-wtf&lt;/p&gt;
+
+&lt;h4 id=&#34;4-1-跨站请求伪造保护&#34;&gt;4.1 跨站请求伪造保护&lt;/h4&gt;
+
+&lt;p&gt;默认情况下，Flask-WTF能保护所有表单免受跨站请求伪造(Cross-Site Request Forgery，CSRF)的攻击。恶意网站把请求发送到被攻击者已登录的其他网站时就会引发CSRF攻击。&lt;/p&gt;
+
+&lt;p&gt;为了实现CSRF保护，Flask-WTF需要程序设置一个密钥。Flask-WTF使用这个密钥生成加密令牌，再用令牌验证请求中表单数据的真伪。设置密钥的方法如以下示例所示：&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>FlaskWeb-抄书二</title>
