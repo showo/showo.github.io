@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on knows</title>
+    <link>https://showo.github.io/categories/wordpress/</link>
+    <description>Recent content in Wordpress on knows</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Jun 2018 22:37:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://showo.github.io/categories/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Wordpress ￥300</title>
+      <link>https://showo.github.io/post/wordpress-300/</link>
+      <pubDate>Wed, 20 Jun 2018 22:37:43 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/wordpress-300/</guid>
+      <description>课程章节 1.WordPress建站主机 2.仪表盘首页 2.1 后台模块只留下‘概览’和‘活动’ 2.2 更新提示 2.2.1 更新类别：3类；主题，插件，核心系统
+核心系统更新后台每个页面都会看到； 插件更新会在插件栏目看到； 主题更新会在外观&amp;gt;主题栏目
+总览更新：后台顶部
+2.2.3 手动更新：
+搜索插件：backup
+应对更新出现问题，提前更新数据库和内容
+设置-updraftplus归档-还原
+2.2.4 自动备份
+借助插件实现自动备份：updraftplus
+updraftplus-设置，将manual模式更改为其他自动频率
+不适合特别大的网站，例如上百兆；
+付费功能
+2.2.5 自动更新
+插件-搜索‘autoupdate’，选择合适的插件。 教程作者选用了‘companion auto update’ 安装，配置
+2.2.6 安全
+插件-wordfence
+2.2.7 常规设置
+WordPress地址和常规地址的设置，一般是相同的。假如二级域名设置，会不一样
+设置-撰写：
+外观-编辑-open link in new tab-template parts-post-默认格式文件
+通过电子邮件发布
+2.2.8 阅读设置
+主页显示：最新文章、静态页面
+文章列表页，不显示正文内容
+搜索引擎不可见
+页面-创建
+2.2.9 讨论设置
+反垃圾插件：akismet
+头像显示：国内需要使用插件：搜索user avatar
+2.3.0 媒体设置
+缩略图大小设置
+2.3.1 固定连接设置
+设置-固定连接
+网站上线前需要在设置-阅读中更改‘搜索引擎收录’配置
+网址中的中文，不建议
+页面中设置固定连接需要使用插件
+2.3.2 插件permalinks customizer配置固定链接
+2.3.3 设计分类目录</description>
+    </item>
+    
+  </channel>
+</rss>

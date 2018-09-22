@@ -6,10 +6,70 @@
     <description>Recent content in Seo on knows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Apr 2018 22:47:16 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Aug 2018 17:25:21 +0800</lastBuildDate>
     
 	<atom:link href="https://showo.github.io/categories/seo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>&lt;SEO前线&gt;之SEO知识</title>
+      <link>https://showo.github.io/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Sun, 19 Aug 2018 17:25:21 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h3 id=&#34;seo体系-流程-案例&#34;&gt;SEO体系/流程/案例&lt;/h3&gt;
+
+&lt;p&gt;一.体系(PC&amp;amp;移动端)，理论基础&lt;/p&gt;
+
+&lt;p&gt;二.流程，操作指导&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;挖掘空间-寻找做法-验证效果(2周出效果-2个月最大化)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;** 如何挖掘空间？**
+* 网站日志
+* 流量拓展[50%需求覆盖,30%排名,20%收录]
+* 统计整站及各页面流量&lt;/p&gt;
+
+&lt;h2 id=&#34;一-体系&#34;&gt;一.体系&lt;/h2&gt;
+
+&lt;h3 id=&#34;完整seo体系&#34;&gt;完整SEO体系&lt;/h3&gt;
+
+&lt;p&gt;&lt;font color=&#34;red&#34;&gt;SEO流量&lt;/font&gt;=搜索需求覆盖+收录+排名+点击&lt;/p&gt;
+
+&lt;p&gt;&lt;font color=&#34;red&#34;&gt;先后关系&lt;/font&gt;: 搜索需求覆盖&amp;gt;收录&amp;gt;排名&amp;gt;点击&lt;/p&gt;
+
+&lt;p&gt;通过以上四点可穷尽所有SEO操作.&lt;/p&gt;
+
+&lt;h2 id=&#34;二-流程-操作指导&#34;&gt;二.流程，操作指导&lt;/h2&gt;
+
+&lt;h4 id=&#34;1-搜索需求覆盖&#34;&gt;1 搜索需求覆盖&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;1.1 含义&lt;/strong&gt;：针对搜索词，创建对应的着陆页来承载或改进原有的着陆页，使其承载更多的搜索词。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2 如何做：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;title修改&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;创造聚合页&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2.1 title修改&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在title中加入搜索量高的词(大网站以修改原先页面，小网站以新增页面为主)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;把最重要的词放到title左侧&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;完整出现搜索量最高的query&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;减少不必要的词及搜索量较低的词的出现&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Python在SEO方面的脚本</title>

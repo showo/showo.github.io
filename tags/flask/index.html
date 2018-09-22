@@ -13,7 +13,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-05-28T22:17:43&#43;08:00"/>
+<meta property="og:updated_time" content="2018-06-03T21:31:18&#43;08:00"/>
 
 
 
@@ -62,6 +62,34 @@
 	<div class="list__content clearfix">
 		<header class="list__header">
 			<h3 class="list__title post__title ">
+				<a href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/" rel="bookmark">FlaskWeb 抄书四</a>
+			</h3>
+			<div class="list__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="list__meta-date" datetime="2018-06-03T21:31:18">June 03, 2018</time>
+			</div>
+		</header>
+		<div class="list__excerpt">
+			 第5章 数据库 数据库按照一定规则保存数据，程序再发起查询取回所需数据。Web程序最常用基于关系模型的数据库，这种数据库也成为SQL数据库，因为他们使用结构化查询语言。不过最近几年文档数据库和键值对数据库成了流行的替代选择，这两种数据库合称为NoSQL数据库。
+关系型数据库把数据存储在表中，表模拟程序中不同的实体。 表的列数是固定的，行业是可变的。列定义表所表示的实体的数据属性。表中的行定义各列对应的真实数据。
+表中有个特殊的列，称为主键，其值为表中各行的唯一标识符。表中还可以有称为外键的列，引用同一个表或不同表中某行的主键。行这件的这种联系成为关系，这是关系型数据库模型的基础。
+5.5 使用Flask-SQLAlchemy管理数据库 Flask-SQLAlchemy是一个Flask扩展，简化了在Flask程序中使用SQLAlchemy的操作。SQLAlchemy是一个很强大的关系型数据库框架，支持多种数据库后台。SQLAlchemy提供了高层ORM，也提供了使用数据库原生SQL的低层功能。
+和其他大多数扩展一样，Flask-SQLAlchemy使用pip安装： &gt; pip install flask-sqlalchemy
+在Flask-SQLAlchemy中，数据库使用URL指定。最流行的数据库引擎采用的数据库URL格式如下表所示。
+Flask-SQLAlchemy数据库URL 数据库引擎URLMySQLmysql://username:password@hostname/databasePostgrespostgresql://username:password@hostname/databaseSQLite(Unix)sqlite:////absolute/path/to/databaseSQLite(Windows)sqlite:///c:/absolute/path/to/database
+在这些URL中，hostname表示MySQL服务所在的主机，可以是本地主机(localhsot)，也可以是远程服务器。数据库服务器上可以托管多个数据库，因此database表示使用的数据库名。如果数据库需要进行认证，username和password表示数据库用户密令。
+SQLite数据库不需要使用服务器，因此不用指定hostname，username和password。URL中的database是硬盘上文件的文件名。
+程序使用的数据库URL必须保存到Flask配置对象的SQLALCHEMY_DATABASE_URI键中。配置对象中海油一个很有用的选项，即SQLALCHEMY_COMMIT_ON_TEARDOWN键，将其设为True时，每次请求结束后都会自动提交数据库中的变动。其他配置选项的作用请参阅Flask-SQLAlchemy的文档。
+以下示例展示如何初始化及配置一个简单的SQLite数据库。
+hello.py,配置数据库：
+from flask_sqlalchemy import SQLAlchemy basedir=os.path.abspath(os.path.dirname(__file__)) app=Flask(__name__) app.config['SQLALCHEMY_DATABASE_URI']=\ 'sqlite:///'+os.path.join(basedir,'data.sqlite') app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN']=True app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN']=False db=SQLAlchemy(app)  
+		</div>
+	</div>
+</article>
+<article class="list__item post clearfix">
+	<div class="list__content clearfix">
+		<header class="list__header">
+			<h3 class="list__title post__title ">
 				<a href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/" rel="bookmark">FlaskWeb 抄书三</a>
 			</h3>
 			<div class="list__meta meta">
@@ -70,7 +98,7 @@
 			</div>
 		</header>
 		<div class="list__excerpt">
-			<h2 id="flaskweb-抄书四">FlaskWeb-抄书四</h2>
+			<h2 id="flaskweb-抄书三">FlaskWeb-抄书三</h2>
 
 <h3 id="第4章-web表单">第4章 Web表单</h3>
 
@@ -182,11 +210,11 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/">&lt;SEO前线&gt;之SEO知识</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/wordpress-300/">Wordpress ￥300</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/">FlaskWeb 抄书四</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/">FlaskWeb 抄书三</a></li>
 			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">FlaskWeb-抄书二</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">FlaskWeb-抄书(1)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E5%9B%BE%E7%89%87%E5%B0%BA%E5%AF%B8%E8%84%9A%E6%9C%AC/">Python在SEO方面的脚本</a></li>
-			<li class="widget__item"><a class="widget__link" href="/post/python%E6%89%B9%E9%87%8F%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">Python批量脚本收集</a></li>
 		</ul>
 	</div>
 </div>
@@ -201,6 +229,7 @@
 			<li class="widget__item"><a class="widget__link" href="/categories/marketing">Marketing</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/others">Others</a></li>
 			<li class="widget__item"><a class="widget__link" href="/categories/seo">Seo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/wordpress">Wordpress</a></li>
 		</ul>
 	</div>
 </div>
@@ -228,6 +257,8 @@
 		<a class="widget__link widget__link--taglist" href="/tags/others" title="others">others</a>
 		<a class="widget__link widget__link--taglist" href="/tags/python" title="python">python</a>
 		<a class="widget__link widget__link--taglist" href="/tags/sem" title="sem">sem</a>
+		<a class="widget__link widget__link--taglist" href="/tags/seo" title="seo">seo</a>
+		<a class="widget__link widget__link--taglist" href="/tags/wordpress" title="wordpress">wordpress</a>
 	</div>
 </div>
 </aside>
