@@ -69,25 +69,25 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/flask/</loc>
-    <lastmod>2018-06-03T21:31:18+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://showo.github.io/categories/flask/</loc>
     <lastmod>2018-06-03T21:31:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/hugo/</loc>
-    <lastmod>2017-12-02T21:44:50+08:00</lastmod>
+    <loc>https://showo.github.io/tags/flask/</loc>
+    <lastmod>2018-06-03T21:31:18+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://showo.github.io/categories/hugo/</loc>
+    <lastmod>2017-12-02T21:44:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://showo.github.io/tags/hugo/</loc>
     <lastmod>2017-12-02T21:44:50+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -99,25 +99,25 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/marketing/</loc>
-    <lastmod>2018-02-10T15:51:42+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://showo.github.io/categories/marketing/</loc>
     <lastmod>2018-02-10T15:51:42+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/others/</loc>
-    <lastmod>2018-04-07T16:08:33+08:00</lastmod>
+    <loc>https://showo.github.io/tags/marketing/</loc>
+    <lastmod>2018-02-10T15:51:42+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://showo.github.io/categories/others/</loc>
+    <lastmod>2018-04-07T16:08:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://showo.github.io/tags/others/</loc>
     <lastmod>2018-04-07T16:08:33+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -141,13 +141,13 @@
   </url>
   
   <url>
-    <loc>https://showo.github.io/tags/seo/</loc>
+    <loc>https://showo.github.io/categories/seo/</loc>
     <lastmod>2018-08-19T17:25:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://showo.github.io/categories/seo/</loc>
+    <loc>https://showo.github.io/tags/seo/</loc>
     <lastmod>2018-08-19T17:25:21+08:00</lastmod>
     <priority>0</priority>
   </url>
