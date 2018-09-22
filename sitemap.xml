@@ -3,13 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://showo.github.io/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://showo.github.io/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8Bseo%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2018-08-19T17:25:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://showo.github.io/post/wordpress-300/</loc>
-    <lastmod>2018-06-20T22:37:43+08:00</lastmod>
   </url>
   
   <url>
@@ -20,11 +15,6 @@
   <url>
     <loc>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/</loc>
     <lastmod>2018-05-28T22:17:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</loc>
-    <lastmod>2018-05-17T21:42:58+08:00</lastmod>
   </url>
   
   <url>
@@ -103,6 +93,12 @@
   </url>
   
   <url>
+    <loc>https://showo.github.io/</loc>
+    <lastmod>2018-08-19T17:25:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://showo.github.io/tags/marketing/</loc>
     <lastmod>2018-02-10T15:51:42+08:00</lastmod>
     <priority>0</priority>
@@ -159,24 +155,6 @@
   <url>
     <loc>https://showo.github.io/tags/</loc>
     <lastmod>2017-12-02T21:44:50+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://showo.github.io/tags/wordpress/</loc>
-    <lastmod>2018-06-20T22:37:43+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://showo.github.io/categories/wordpress/</loc>
-    <lastmod>2018-06-20T22:37:43+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://showo.github.io/</loc>
-    <lastmod>2018-08-19T17:25:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   

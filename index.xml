@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>knows</title>
+    <title>KNOWs</title>
     <link>https://showo.github.io/</link>
-    <description>Recent content on knows</description>
+    <description>Recent content on KNOWs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Aug 2018 17:25:21 +0800</lastBuildDate>
@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>&lt;SEO前线&gt;之SEO知识</title>
-      <link>https://showo.github.io/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/</link>
+      <title>SEO前线之SEO知识</title>
+      <link>https://showo.github.io/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8Bseo%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Sun, 19 Aug 2018 17:25:21 +0800</pubDate>
       
-      <guid>https://showo.github.io/post/seo%E5%9F%B9%E8%AE%AD%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://showo.github.io/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8Bseo%E7%9F%A5%E8%AF%86/</guid>
       <description>&lt;h3 id=&#34;seo体系-流程-案例&#34;&gt;SEO体系/流程/案例&lt;/h3&gt;
 
 &lt;p&gt;一.体系(PC&amp;amp;移动端)，理论基础&lt;/p&gt;
@@ -72,70 +72,21 @@
     </item>
     
     <item>
-      <title>Wordpress ￥300</title>
-      <link>https://showo.github.io/post/wordpress-300/</link>
-      <pubDate>Wed, 20 Jun 2018 22:37:43 +0800</pubDate>
-      
-      <guid>https://showo.github.io/post/wordpress-300/</guid>
-      <description>课程章节 1.WordPress建站主机 2.仪表盘首页 2.1 后台模块只留下‘概览’和‘活动’ 2.2 更新提示 2.2.1 更新类别：3类；主题，插件，核心系统
-核心系统更新后台每个页面都会看到； 插件更新会在插件栏目看到； 主题更新会在外观&amp;gt;主题栏目
-总览更新：后台顶部
-2.2.3 手动更新：
-搜索插件：backup
-应对更新出现问题，提前更新数据库和内容
-设置-updraftplus归档-还原
-2.2.4 自动备份
-借助插件实现自动备份：updraftplus
-updraftplus-设置，将manual模式更改为其他自动频率
-不适合特别大的网站，例如上百兆；
-付费功能
-2.2.5 自动更新
-插件-搜索‘autoupdate’，选择合适的插件。 教程作者选用了‘companion auto update’ 安装，配置
-2.2.6 安全
-插件-wordfence
-2.2.7 常规设置
-WordPress地址和常规地址的设置，一般是相同的。假如二级域名设置，会不一样
-设置-撰写：
-外观-编辑-open link in new tab-template parts-post-默认格式文件
-通过电子邮件发布
-2.2.8 阅读设置
-主页显示：最新文章、静态页面
-文章列表页，不显示正文内容
-搜索引擎不可见
-页面-创建
-2.2.9 讨论设置
-反垃圾插件：akismet
-头像显示：国内需要使用插件：搜索user avatar
-2.3.0 媒体设置
-缩略图大小设置
-2.3.1 固定连接设置
-设置-固定连接
-网站上线前需要在设置-阅读中更改‘搜索引擎收录’配置
-网址中的中文，不建议
-页面中设置固定连接需要使用插件
-2.3.2 插件permalinks customizer配置固定链接
-2.3.3 设计分类目录</description>
-    </item>
-    
-    <item>
       <title>FlaskWeb 抄书四</title>
       <link>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/</link>
       <pubDate>Sun, 03 Jun 2018 21:31:18 +0800</pubDate>
       
       <guid>https://showo.github.io/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/</guid>
-      <description> 第5章 数据库 数据库按照一定规则保存数据，程序再发起查询取回所需数据。Web程序最常用基于关系模型的数据库，这种数据库也成为SQL数据库，因为他们使用结构化查询语言。不过最近几年文档数据库和键值对数据库成了流行的替代选择，这两种数据库合称为NoSQL数据库。
-关系型数据库把数据存储在表中，表模拟程序中不同的实体。 表的列数是固定的，行业是可变的。列定义表所表示的实体的数据属性。表中的行定义各列对应的真实数据。
-表中有个特殊的列，称为主键，其值为表中各行的唯一标识符。表中还可以有称为外键的列，引用同一个表或不同表中某行的主键。行这件的这种联系成为关系，这是关系型数据库模型的基础。
-5.5 使用Flask-SQLAlchemy管理数据库 Flask-SQLAlchemy是一个Flask扩展，简化了在Flask程序中使用SQLAlchemy的操作。SQLAlchemy是一个很强大的关系型数据库框架，支持多种数据库后台。SQLAlchemy提供了高层ORM，也提供了使用数据库原生SQL的低层功能。
-和其他大多数扩展一样，Flask-SQLAlchemy使用pip安装： &amp;gt; pip install flask-sqlalchemy
-在Flask-SQLAlchemy中，数据库使用URL指定。最流行的数据库引擎采用的数据库URL格式如下表所示。
-Flask-SQLAlchemy数据库URL 数据库引擎URLMySQLmysql://username:password@hostname/databasePostgrespostgresql://username:password@hostname/databaseSQLite(Unix)sqlite:////absolute/path/to/databaseSQLite(Windows)sqlite:///c:/absolute/path/to/database
-在这些URL中，hostname表示MySQL服务所在的主机，可以是本地主机(localhsot)，也可以是远程服务器。数据库服务器上可以托管多个数据库，因此database表示使用的数据库名。如果数据库需要进行认证，username和password表示数据库用户密令。
-SQLite数据库不需要使用服务器，因此不用指定hostname，username和password。URL中的database是硬盘上文件的文件名。
-程序使用的数据库URL必须保存到Flask配置对象的SQLALCHEMY_DATABASE_URI键中。配置对象中海油一个很有用的选项，即SQLALCHEMY_COMMIT_ON_TEARDOWN键，将其设为True时，每次请求结束后都会自动提交数据库中的变动。其他配置选项的作用请参阅Flask-SQLAlchemy的文档。
-以下示例展示如何初始化及配置一个简单的SQLite数据库。
-hello.py,配置数据库：
-from flask_sqlalchemy import SQLAlchemy basedir=os.path.abspath(os.path.dirname(__file__)) app=Flask(__name__) app.config[&#39;SQLALCHEMY_DATABASE_URI&#39;]=\ &#39;sqlite:///&#39;+os.path.join(basedir,&#39;data.sqlite&#39;) app.config[&#39;SQLALCHEMY_COMMIT_ON_TEARDOWN&#39;]=True app.config[&#39;SQLALCHEMY_COMMIT_ON_TEARDOWN&#39;]=False db=SQLAlchemy(app)  </description>
+      <description>&lt;h3 id=&#34;第5章-数据库&#34;&gt;第5章 数据库&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;数据库&lt;/strong&gt;按照一定规则保存数据，程序再发起查询取回所需数据。Web程序最常用基于&lt;strong&gt;关系&lt;/strong&gt;模型的数据库，这种数据库也成为SQL数据库，因为他们使用结构化查询语言。不过最近几年&lt;strong&gt;文档数据库&lt;/strong&gt;和&lt;strong&gt;键值对数据库&lt;/strong&gt;成了流行的替代选择，这两种数据库合称为NoSQL数据库。&lt;/p&gt;
+
+&lt;p&gt;关系型数据库把数据存储在&lt;strong&gt;表&lt;/strong&gt;中，表模拟程序中不同的实体。
+表的列数是固定的，行业是可变的。列定义表所表示的实体的数据属性。表中的行定义各列对应的真实数据。&lt;/p&gt;
+
+&lt;p&gt;表中有个特殊的列，称为&lt;strong&gt;主键&lt;/strong&gt;，其值为表中各行的唯一标识符。表中还可以有称为&lt;strong&gt;外键&lt;/strong&gt;的列，引用同一个表或不同表中某行的主键。行这件的这种联系成为&lt;strong&gt;关系&lt;/strong&gt;，这是关系型数据库模型的基础。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -158,36 +109,6 @@ from flask_sqlalchemy import SQLAlchemy basedir=os.path.abspath(os.path.dirname(
 &lt;p&gt;默认情况下，Flask-WTF能保护所有表单免受跨站请求伪造(Cross-Site Request Forgery，CSRF)的攻击。恶意网站把请求发送到被攻击者已登录的其他网站时就会引发CSRF攻击。&lt;/p&gt;
 
 &lt;p&gt;为了实现CSRF保护，Flask-WTF需要程序设置一个密钥。Flask-WTF使用这个密钥生成加密令牌，再用令牌验证请求中表单数据的真伪。设置密钥的方法如以下示例所示：&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>FlaskWeb-抄书二</title>
-      <link>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</link>
-      <pubDate>Thu, 17 May 2018 21:42:58 +0800</pubDate>
-      
-      <guid>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</guid>
-      <description>&lt;h2 id=&#34;flaskweb-抄书二&#34;&gt;FlaskWeb-抄书二&lt;/h2&gt;
-
-&lt;h3 id=&#34;第3章-模板&#34;&gt;第3章 模板&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为&lt;strong&gt;渲染&lt;/strong&gt;，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h4 id=&#34;3-1-jinja2模板引擎&#34;&gt;3.1 Jinja2模板引擎&lt;/h4&gt;
-
-&lt;p&gt;形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：&lt;/p&gt;
-
-&lt;p&gt;示例：templates/index.html: Jinja2模板&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello，world！&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;在前面2-2示例中，是视图函数user()返回的响应中包含一个使用&lt;strong&gt;变量&lt;/strong&gt;标识的动态部分。如下示例实现了这个响应。
-示例： templates/user.html:Jinja2模板&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello,{{name}}&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

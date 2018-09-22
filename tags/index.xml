@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on knows</title>
+    <title>Tags on KNOWs</title>
     <link>https://showo.github.io/tags/</link>
-    <description>Recent content in Tags on knows</description>
+    <description>Recent content in Tags on KNOWs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Dec 2017 21:44:50 +0800</lastBuildDate>
@@ -80,15 +80,6 @@
       <pubDate>Sun, 19 Aug 2018 17:25:21 +0800</pubDate>
       
       <guid>https://showo.github.io/tags/seo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wordpress</title>
-      <link>https://showo.github.io/tags/wordpress/</link>
-      <pubDate>Wed, 20 Jun 2018 22:37:43 +0800</pubDate>
-      
-      <guid>https://showo.github.io/tags/wordpress/</guid>
       <description></description>
     </item>
     
