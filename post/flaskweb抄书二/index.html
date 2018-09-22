@@ -47,8 +47,8 @@
 		<header class="header">
 	<div class="container">
 		<div class="logo" role="banner">
-			<a class="logo__link" href="/" title="knows" rel="home">
-				<div class="logo__title">knows</div>
+			<a class="logo__link" href="/" title="KNOWs" rel="home">
+				<div class="logo__title">KNOWs</div>
 				<div class="logo__tagline">be yourself  know yourself</div>
 			</a>
 		</div>
@@ -134,8 +134,9 @@ def user(name):
 &lt;p&gt; a value from a object's method: {{myobj.method()}}.&lt;/p&gt;
 </code></pre>
 
-<p>可以使用过滤器修改变量，过滤器名添加在变量名之后，中间以竖线分隔。
-部分过滤器：<table><tr><th>过滤器名称</th><th>说明</tr><tr><td>safe</td><td>渲染值时不转义</td></tr><tr><td>capitallize</td><td>把值的首字符转换成大写，其他字符转换成小写</td></tr><tr><td>lower</td><td>把值转换成小写形式</td></tr><tr><td>upper</td><td>把值转换成大写形式</td></tr><tr><td>title</td><td>把值中的每个单词的首字符都转换成大写</td></tr><tr><td>trim</td><td>把值的首尾空格去掉</td></tr><tr><td>striptags</td><td>渲染之前把值中所有的HTML标签都删掉</td></tr>
+<p>可以使用过滤器修改变量，过滤器名添加在变量名之后，中间以竖线分隔。</p>
+
+<p>部分过滤器：<table><tr><th>过滤器名称</th><th>说明</tr><tr><td>safe</td><td>渲染值时不转义</td></tr><tr><td>capitallize</td><td>把值的首字符转换成大写，其他字符转换成小写</td></tr><tr><td>lower</td><td>把值转换成小写形式</td></tr><tr><td>upper</td><td>把值转换成大写形式</td></tr><tr><td>title</td><td>把值中的每个单词的首字符都转换成大写</td></tr><tr><td>trim</td><td>把值的首尾空格去掉</td></tr><tr><td>striptags</td><td>渲染之前把值中所有的HTML标签都删掉</td></tr>
 </table></p>
 
 <p>safe过滤器说下，默认情况下，出于安全考虑，Jinja2会转义所有变量。很多情况下需要显示变量中存储的HTML代码，这时可使用safe过滤器。</p>
@@ -151,6 +152,7 @@ def user(name):
 {% else %}
     Hello,Stranger!
 {% endif % }
+
 </code></pre>
 
 <p>另一种常见的需求是在模板中渲染一组元素。下例展示了如何使用for循环实现这一需求：</p>
@@ -231,7 +233,7 @@ def user(name):
 <p>要想在程序中集成Bootstrap，一是在模板中进行更改；二是使用Flask-Bootstrap扩展。
 使用pip安装：</p>
 
-<p><code>(venv) d:\learnfla&gt; pip install flask-bootstrap</code>h</p>
+<p><code>(venv) d:\learnfla&gt; pip install flask-bootstrap</code></p>
 
 <p>Flask扩展一般都在创建程序实例时初始化。如下是Flask-Bootstrap初始化方法：
 示例 hello.py</p>
@@ -288,8 +290,9 @@ bootstrap=Bootstrap(app)
 
 <p>Flask-Bootstrap的base.html模板还定义了很多其他块，都可在衍生模板中使用。表3-2列出了所有可用的块。</p>
 
-<p><strong>Flask-Bootstrap基模板中定义的块</strong>
-<table><tr><th>块名</th><th>说明</th></tr><tr><td>doc</td><td>整个HTML文档</td></tr><tr><td>html_attribs</td><td>html标签的属性</td></tr><tr><td>html</td><td>html标签中的内容</td></tr><tr><td>head</td><td>head标签中的内容</td></tr><tr><td>title</td><td>title标签中的内容 </td></tr><tr><td>metas</td><td>一组meta标签</td></tr><tr><td>styles</td><td>层叠样式表定义</td></tr><tr><td>body_attribs</td><td>body标签的属性</td></tr><tr><td>body</td><td>body标签中的内容</td></tr><tr><td>navbar</td><td>用户定义的导航条</td></tr><tr><td>content</td><td>用户定义的页面内容</td></tr><tr><td>scripts</td><td>文档底部的JavaScript声明</td></tr></table></p>
+<p><strong>Flask-Bootstrap基模板中定义的块</strong></p>
+
+<table><tr><th>块名</th><th>说明</th></tr><tr><td>doc</td><td>整个HTML文档</td></tr><tr><td>html_attribs</td><td>html标签的属性</td></tr><tr><td>html</td><td>html标签中的内容</td></tr><tr><td>head</td><td>head标签中的内容</td></tr><tr><td>title</td><td>title标签中的内容 </td></tr><tr><td>metas</td><td>一组meta标签</td></tr><tr><td>styles</td><td>层叠样式表定义</td></tr><tr><td>body_attribs</td><td>body标签的属性</td></tr><tr><td>body</td><td>body标签中的内容</td></tr><tr><td>navbar</td><td>用户定义的导航条</td></tr><tr><td>content</td><td>用户定义的页面内容</td></tr><tr><td>scripts</td><td>文档底部的JavaScript声明</td></tr></table>
 
 <p>上表中的很多块都是Flask-Bootstrap自用的，如果直接定义可能会导致一些问题。例如，Bootstrap所需的文件再styles和scripts块中的声明。如果程序需要向已经有内容的块中添加新内容，必须使用Jianja2提供的super()函数。
 如果要在衍生模板中添加新的JavaScript文件，需要这么定义scripts块：</p>
@@ -345,19 +348,19 @@ templates/base.html模板中的content块中只有1个<div>容器,其中包含�
 
 <p>Web程序不是仅由python代码和模板组成。大多数程序还会使用静态文件，例如HTML代码中引用的图片、JavaScript源码文件和CSS。</p>
 
-<p>默认设置下，Flask在程序根目录中名为static的子目录中寻找静态文件。如果需要，刻在static文件夹中使用子文件夹存放文件。服务器收到前面那个URL后，会生成一个响应，包含文件系统中static/css/style.css文件的内容。</p>
+<p>默认设置下，Flask在程序根目录中名为static的子目录中寻找静态文件。如果需要，刻在<code>static</code>文件夹中使用子文件夹存放文件。服务器收到前面那个URL后，会生成一个响应，包含文件系统中<code>static/css/style.css</code>文件的内容。</p>
 
-<p>如何在程序的基模板中放置favicon.ico图标。
-示例： templates/base.html:定义收藏夹图标</p>
+<p>如何在程序的基模板中放置<code>favicon.ico</code>图标。
+示例： <code>templates/base.html</code>:定义收藏夹图标</p>
 
-<pre><code>{{%block head%}}
-{{super()}}
-&lt;link rel=&quot;shortcut icon&quot; href=&quot;{{url_for('static',filename='favicon.ico')}}&quot; type=&quot;image/x-icon&quot;&gt;
+<p>(2代表大于号，如果采用大于号产生了页面生产产生冲突)</p>
 
-&lt;link rel=&quot;icon&quot; href=&quot;{{ url_for('static',filename='favicon.ico') }}&quot; type=&quot;image/x-icon&quot;
+<p>22% block head %22
+22super()22</p>
 
-{%endblock%}
-</code></pre>
+<p><link rel="shortcut icon" href="22url_for('static',filename='favicon.ico')22" type="image/x-icon"></p>
+
+<p><link rel="icon" href="22url_for('static',filename='favicon.ico')22" type="image/x-icon">2%endblock%2</p>
 
 <p>图标的声明会插入head块的末尾。</p>
 
@@ -371,14 +374,13 @@ templates/base.html模板中的content块中只有1个<div>容器,其中包含�
 
 <pre><code>from flask_moment import Moment
 moment=Moment(app)
-
 </code></pre>
 
 <p>除了moment.js，Flask-Moment还依赖jquery.js。要在HTML文档中引入这两个库，可以直接引入，这样可以选择使用哪个版本，也可以使用扩展提供的辅助函数，从内容分发网络(content delivery network，CDN)中引入通过测试的版本。Bootstrap已经引入了jquery.js，因此只需要引入moment.js即可。</p>
 
 <p>示例，在基模板的scripts块中引入这个库：</p>
 
-<p>templates/base.html：引入moment.js库,</p>
+<p><code>templates/base.html：引入moment.js库,</code></p>
 
 <pre><code>{% block scripts %}
 {{super()}}
@@ -437,17 +439,67 @@ def index():
 
 <nav class="post-nav flex">
 	<div class="post-nav__item post-nav__item--prev">
-		<a class="post-nav__link" href="/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8Bseo%E7%9F%A5%E8%AF%86/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">SEO前线之SEO知识</p></a>
+		<a class="post-nav__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">FlaskWeb 抄书四</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8B%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">SEO前线之优化知识</p></a>
 	</div>
 </nav>
 
 
 			</section>
-			
+			<aside class="sidebar"><div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8B%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86/">SEO前线之优化知识</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">FlaskWeb抄书二</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/">FlaskWeb 抄书四</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/">FlaskWeb 抄书三</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">FlaskWeb-抄书(1)</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/flask">Flask</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/hugo">Hugo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/marketing">Marketing</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/others">Others</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/seo">Seo</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/blog" title="Blog">Blog (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask" title="Flask">Flask (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/marketing" title="Marketing">Marketing (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/others" title="Others">Others (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sem" title="Sem">Sem (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/seo" title="Seo">Seo (1)</a>
+	</div>
+</div><div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/showo" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+</aside>
 		</div>
 		<footer class="footer">
 	<div class="container">
-		<div class="footer__copyright">&copy; 2018 knows. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span></div>
+		<div class="footer__copyright">&copy; 2018 KNOWs. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span></div>
 	</div>
 </footer>
 

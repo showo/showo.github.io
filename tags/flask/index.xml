@@ -6,10 +6,40 @@
     <description>Recent content in Flask on KNOWs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jun 2018 21:31:18 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Sep 2018 10:16:44 +0800</lastBuildDate>
     
 	<atom:link href="https://showo.github.io/tags/flask/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FlaskWeb抄书二</title>
+      <link>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</link>
+      <pubDate>Sat, 22 Sep 2018 10:16:44 +0800</pubDate>
+      
+      <guid>https://showo.github.io/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/</guid>
+      <description>&lt;h2 id=&#34;flaskweb-抄书二&#34;&gt;FlaskWeb-抄书二&lt;/h2&gt;
+
+&lt;h3 id=&#34;第3章-模板&#34;&gt;第3章 模板&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程被称为&lt;strong&gt;渲染&lt;/strong&gt;，为了渲染模板，Flask使用了一个名为Jinja2的强大模板引擎。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&#34;3-1-jinja2模板引擎&#34;&gt;3.1 Jinja2模板引擎&lt;/h4&gt;
+
+&lt;p&gt;形式最简单的Jinja2模板就是一个包含响应文本的文件，以下示例就是一个Jinja2模板：&lt;/p&gt;
+
+&lt;p&gt;示例：templates/index.html: Jinja2模板&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello，world！&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在前面2-2示例中，是视图函数user()返回的响应中包含一个使用&lt;strong&gt;变量&lt;/strong&gt;标识的动态部分。如下示例实现了这个响应。
+示例： templates/user.html:Jinja2模板&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;h1&amp;gt;hello,{{name}}&amp;lt;/h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>FlaskWeb 抄书四</title>
