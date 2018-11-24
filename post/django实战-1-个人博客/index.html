@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Django实战 1 个人博客</title>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.48" />
+	<meta property="og:title" content="Django实战 1 个人博客" />
+<meta property="og:description" content="一·Django实战之简单博客搭建  环境：Django2.1版本，python3.6。Django是以python为语言环境的，所以需要保证计算机上已经安装了python，本文使用的版本如上所示。
+ 1.1 安装Django  1.1.1 在Windows上安装Django Windows环境下在cmd中输入：pip install django,会安装最新版本。如果需要安装特定的版本，使用pip install django==1.11，语句中‘1.11’是相应的版本型号，目前Django已经更新到2.0版本。
+ 1.1.2 检查安装是否成功 在cmd中输入python，进入python环境，输入如下内容：
+&gt;&gt;&gt; import django &gt;&gt;&gt; django.VERSION  显示响应的版本号，即是安装成功。
+ 1.1.3 本地使用virtualenv虚拟环境搭建多个不干扰的环境
+ 安装：pip install virtualenv virtualenvwrapper-win
+ 设置环境变量；
+ 使用方法：创建虚拟环境：mkvirtualenv name;删除环境：rmvirtualenv name;工作或切换到相应的环境：workon name；退出终端环境：deactivate；
+   1.2 创建项目及应用  1.2.1 创建项目 创建并进入虚拟环境后，新建Django项目，使用&gt;&gt;&gt; django-admin startproject mysite命令(或者是django-admin.py startproject mysite)来创建名为mysite项目。mysite就是自己的项目名称，需要为合法的python包名。
+ 1.2.2 创建应用app 进入mysite目录下，然后执行以下命令：django-admin.py startapp blog或django-manage.py startapp blog。一般一个项目下有多个app，通用的app也可以在多个项目中使用，与项目名类似的是app name也需要是合法的python包名。
+ 1.2.3 网站配置 在1.2.2中创建了应用app，但是还没有将应用注册到本项目中，因此暂时不能访问。配置文件就是mysite/setting.py，下面就选择几个目前需要使用的来说明。
+ DEBUG:其值为True或False。在本地开发过程中需设置成True，在测试中可以显示详细的错误信息，这被称为‘开发模式’；在上线后，需要设置成False，避免暴露内部信息。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://showo.github.io/post/django%E5%AE%9E%E6%88%98-1-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" /><meta property="article:published_time" content="2018-11-20T21:11:46&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-20T21:11:46&#43;08:00"/>
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<script type="text/javascript" src="/js/scripts.js"></script>
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="KNOWs" rel="home">
+				<div class="logo__title">KNOWs</div>
+				<div class="logo__tagline">be yourself  know yourself</div>
+			</a>
+		</div>
+	</div>
+	
+<nav class="menu">
+	<ul class="menu__list">
+		<li class="menu__item"><a class="menu__link" href="/">HOME</a></li>
+		<li class="menu__item"><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
+</nav>
+
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Django实战 1 个人博客</h1><div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-20T21:11:46">November 20, 2018</time>
+</div>
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/django" rel="category">Django</a></span>
+</div></div>
+		</header><div class="content post__content clearfix">
+			
+
+<h3 id="一-django实战之简单博客搭建">一·Django实战之简单博客搭建</h3>
+
+<blockquote>
+<p>环境：Django2.1版本，python3.6。Django是以python为语言环境的，所以需要保证计算机上已经安装了python，本文使用的版本如上所示。</p>
+</blockquote>
+
+<h4 id="1-1-安装django">1.1 安装Django</h4>
+
+<ul>
+<li><p>1.1.1 在Windows上安装Django
+Windows环境下在cmd中输入：<code>pip install django</code>,会安装最新版本。如果需要安装特定的版本，使用<code>pip install django==1.11</code>，语句中‘1.11’是相应的版本型号，目前Django已经更新到2.0版本。</p></li>
+
+<li><p>1.1.2 检查安装是否成功
+在cmd中输入python，进入python环境，输入如下内容：</p>
+
+<pre><code>&gt;&gt;&gt; import django
+&gt;&gt;&gt; django.VERSION
+</code></pre>
+
+<p>显示响应的版本号，即是安装成功。</p></li>
+
+<li><p>1.1.3 本地使用virtualenv虚拟环境搭建多个不干扰的环境</p>
+
+<ul>
+<li><p>安装：<code>pip install virtualenv virtualenvwrapper-win</code></p></li>
+
+<li><p>设置环境变量；</p></li>
+
+<li><p>使用方法：创建虚拟环境：mkvirtualenv name;删除环境：rmvirtualenv name;工作或切换到相应的环境：workon name；退出终端环境：deactivate；</p></li>
+</ul></li>
+</ul>
+
+<h4 id="1-2-创建项目及应用">1.2 创建项目及应用</h4>
+
+<ul>
+<li><p>1.2.1 创建项目
+创建并进入虚拟环境后，新建Django项目，使用<code>&gt;&gt;&gt; django-admin startproject mysite</code>命令(或者是<code>django-admin.py startproject mysite</code>)来创建名为mysite项目。mysite就是自己的项目名称，需要为合法的python包名。</p></li>
+
+<li><p>1.2.2 创建应用app
+进入mysite目录下，然后执行以下命令：<code>django-admin.py startapp blog</code>或<code>django-manage.py startapp blog</code>。一般一个项目下有多个app，通用的app也可以在多个项目中使用，与项目名类似的是app name也需要是合法的python包名。</p></li>
+
+<li><p>1.2.3 网站配置
+在1.2.2中创建了应用app，但是还没有将应用注册到本项目中，因此暂时不能访问。配置文件就是mysite/setting.py，下面就选择几个目前需要使用的来说明。</p>
+
+<ul>
+<li><p>DEBUG:其值为True或False。在本地开发过程中需设置成True，在测试中可以显示详细的错误信息，这被称为‘开发模式’；在上线后，需要设置成False，避免暴露内部信息。</p></li>
+
+<li><p>ALLOWED_HOSTS:在DEBUG为True时，其值可为空；当上线部署到生产环境中时，需要在这填写主域名。</p></li>
+
+<li><p>INSTALLED_APPS:所有的应用app只有填写到这里才能生效。上文中新建的app名称blog也需要填写在这里。不要忘了在之后加上逗号。</p></li>
+
+<li><p>DATABASE:数据库配置。Django支持多种数据库，默认配置是SQLite。</p></li>
+
+<li><p>LANGUAGE_CODE:设置项目的语言，一般不用修改。若用汉语，则设置为LANGUAGE_CODE=&lsquo;zh-hans&rsquo;。</p></li>
+
+<li><p>TIME_ZONE:设置时区，通常使用东八区，设置为&rsquo;Asia/Shanghai&rsquo;。</p></li>
+</ul></li>
+</ul>
+
+<h4 id="1-3-编写博客数据模型类">1.3 编写博客数据模型类</h4>
+
+<blockquote>
+<p>设计数据库和表结构是做网站的基础。在Django中，不需要SQL语句直接和数据库打交道，而是用python的方式。</p>
+</blockquote>
+
+<ul>
+<li>1.3.1 数据模型类</li>
+</ul>
+
+<p>利用django开发网站，一般要先编写数据模型，也就是在mysite/blog/models.py中写一个类，这个类与数据库中的数据表具有对应关系，它本质上是继承了django.db.models.Model的类。</p>
+
+<p>我在这没有找到Model这个文件，搜索得知：python的类可以是单文件，也可以是文件。Model这个类位于models类下的base.py文件中(没确认过)。</p>
+
+<pre><code>from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+
+class BlogArticles(models.Model):
+    title=models.CharField(max_length=300)
+    author=models.ForeignKey(User,related_name=&quot;blog_posts&quot;，on_delete=models.CASECADE)
+    body=models.TextField()
+    publish=models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering=(&quot;-publish&quot;,)
+    
+    def __str__(self):
+        return self.title
+
+</code></pre>
+
+<p>在BlogArticles这个类中，每个属性对应着数据库表中的一个字段。</p>
+
+<ul>
+<li><p>1.3.2 建立数据库表</p>
+
+<ul>
+<li><p><code>python manage.py makemigrations</code>
+在mysite/manage.py目录下的cmd环境中执行，作用是创建一个能建立数据库表的文件。</p></li>
+
+<li><p><code>python manage.py migrate</code>
+相同位置执行，作用是创建数据库。</p></li>
+</ul></li>
+</ul>
+
+<h4 id="1-4-发布博客">1.4 发布博客</h4>
+
+<blockquote>
+<p>使用Django默认的管理功能就可以实现文章发布，前提是需要创建超级管理员。</p>
+</blockquote>
+
+<ul>
+<li><p>创建超级管理员</p>
+
+<ul>
+<li><p><code>python manage.py createsuperuser</code></p></li>
+
+<li><p>输入用户名与密码等相关内容</p></li>
+</ul></li>
+
+<li><p>运行服务器</p>
+
+<ul>
+<li><code>python manage.py runserver</code></li>
+</ul></li>
+
+<li><p>访问后台管理页面，浏览器地址栏访问:<code>http://127.0.0.1:8000/admin</code></p></li>
+
+<li><p>引入数据模型类</p>
+
+<ul>
+<li>./blog/admin.py
+```
+from django.contrib import admin
+from .models import BlogArticles #@1
+<br /></li>
+</ul>
+
+<p>admin.site.register(BlogArticles) #@2
+```</p>
+
+<p>代码@1将类BlogArticles引入当前环境，然后通过@2将该类注册到admin中。因为是开发环境中，刷新页面后管理页面出现新注册BLOG。</p></li>
+
+<li><p>丰富后台文章列表信息</p>
+
+<p>我们在多发布几篇文章之后，后台的文章标题列表内容很单一，所以我们需要丰富一下。同样在./blog/admin.py中添加新类。</p>
+
+<pre><code>from django.contrib import admin
+from .models import BlogArticles
+
+class BlogArticlesAdmin(admin.ModelAdmin):
+    list_display=(&quot;title&quot;,&quot;author&quot;,&quot;publish&quot;)
+    list_filter=(&quot;publish&quot;,&quot;author&quot;)
+    search_fields=('title',&quot;body&quot;)
+    raw_id_fields=(&quot;author&quot;)
+    date_hierarchy=&quot;publish&quot;
+    ordering=['publish','author']
+
+admin.site.register(BlogAritcles,BlogArticlesAdmin)
+</code></pre></li>
+</ul>
+
+<p>在这里我们为文章标题列表添加了标题栏、标题过滤器、搜索栏、排序、日期分类功能。</p>
+
+<h4 id="1-5-显示博客标题">1.5 显示博客标题</h4>
+
+<blockquote>
+<p>当我们在.blog/models.py中创建了数据模型后，django会自动提供数据库抽象API，通过这个API可以创建、获取、修改和删除对象，对此还有一个专有的ORM。</p>
+</blockquote>
+
+<p>读取文章标题的函数通常放在<font color="blue"><strong>./blog/views.py</strong></font>中，当然也可以写到任何其他名称的文件中。</p>
+
+<pre><code>from django.shortcuts import render
+from .models import BlogArticles
+
+def blog_title(request):
+    blogs=BlogAritcles.object.all()
+    return render(request,&quot;blog/titles.html&quot;,{&quot;blogs&quot;:blogs})
+
+</code></pre>
+
+<p>像blog_title()这个函数，是在视图文件views.py中编写的一个函数，这种方式我们称之为“基于函数的视图”，这个函数被叫做“视图函数”。</p>
+
+<p>可以看到函数中我们有很多类都不没见过，暂时只需要先了解一个大概的作用即可。</p>
+
+<p>XX.objcects.all()函数是获取对象若干种方法之一，在这里就是获取文章的标题名称。return函数是python自带的函数之一，和原始意思一致，就是运行这个函数后会返回给我们一个东西。render函数作用是渲染模板，也就是我们放在templates中的网页。</p>
+
+<p>这里我们需要在tempaltes目录下新建一个base.html和blog文件夹，其下有title.html文件。</p>
+
+<p>base.html文件的作用是将所有模板公共部分的抽取出来，在其他文件中只需要编写个性代码即可。</p>
+
+<p>在这里我们跳过base.html与title.html文件内容的编写。先简单介绍下模板文件中特殊符的作用。</p>
+
+<p>上文中出现的{&ldquo;blogs&rdquo;:blogs}是向模板文件中传递了blogs变量所引用的queryset(django数据库的查询结果)的值。</p>
+
+<h4 id="1-6-配置url-py-实现网页访问">1.6 配置url.py，实现网页访问</h4>
+
+<blockquote>
+<p>首先需要在.mysite/urls.py中本项目的各个应用，再在某个应用下配置具体的url。</p>
+</blockquote>
+
+<p>.mysite/urls.py:</p>
+
+<pre><code>from django.urls import path,include
+from django.contrib import admin
+
+urlpatterns=[
+
+    path('admin/',admin.site.urls)
+    path('blog/',include('blog.urls',namespace='blog')),
+    
+    ]
+
+</code></pre>
+
+<p>创建.blog/urls.py并编写如下代码:</p>
+
+<pre><code>from django.urls import path
+from .import views
+app_name='blog'
+
+urlpatterns=[
+    path('',views.blog_title,name=&quot;blog_title&quot;),
+    path('&lt;article_id&gt;',views.blog_article,name=&quot;blog_detail&quot;),#这是下文中访问文章内容，所需要的
+
+
+</code></pre>
+
+<p>Django2.0在urls.py中使用了path，舍弃了正则。
+查看页面：开启django服务器；访问127.0.0.1:8000/blog或者localhost:8000/blog。</p>
+
+<p><strong>我们可以这么理解，访问这个地址：<code>http://localhost:8000/blog</code>,会被Django中的urls.py接收，根据设置访问视图函数中的blog_article函数，而其中这个函数会对用模块函数models.py中内容并返回给响应的页面。</strong></p>
+
+<h4 id="1-7-显示博客内容">1.7 显示博客内容</h4>
+
+<blockquote>
+<p>显示博客内容和显示标题是同样的思路，在网页上博客标题超链接是博客的ID，只有ID才是一篇文章独一无二的身份标识。</p>
+</blockquote>
+
+<p>在.blog/views.py中编写：</p>
+
+<pre><code>def blog_article(request,articled_id):
+    article=BlogArticles.object.get(id=articled_id)
+    pub=article.publish
+    return render(request,&quot;blog/content.html&quot;,{&quot;article&quot;:article,&quot;publish&quot;:pub})
+</code></pre>
+
+<p>通过render函数将函数实例article和pub传递到content.html页面上。</p>
+
+<p>然后编写对应的网页模板，创建./templates/blog/content.html，具体内容在github上搜索老齐django实战即可。</p>
+
+<h4 id="1-8-配置urls-py-实现文章内容可访问">1.8 配置urls.py，实现文章内容可访问</h4>
+
+<p>.blog/urls.py:</p>
+
+<pre><code>……
+path('&lt;article_id&gt;',views.blog_article,name=&quot;blog_detail&quot;)
+……
+</code></pre>
+
+<h4 id="1-9-处理网页404错误">1.9 处理网页404错误</h4>
+
+<blockquote>
+<p>通过views.py视图函数对异常请求进行处理</p>
+</blockquote>
+
+<p>适当修改视图函数.blgo/views.py中的blog_article()函数。</p>
+
+<pre><code>from django.shortcuts import render,get_object_or_404
+from .models import BlogArticles
+
+def blog_article(request,article_id):
+    #article=BlogArticles.objects.get(id=article_id)
+    article=get_object_or_404(BlogArticles,id=article_id)
+    pub=article.publish
+    return render(request,&quot;blog/content.html&quot;,{&quot;article&quot;:article,&quot;publish&quot;:pub})
+
+</code></pre>
+
+<p>上述代码中引入的get_object_or_404()函数能够简化对请求网页不存在时候的异常处理。之后会显示404错误。</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16"><path d="M16 9.5c0 .373-.24.74-.5 1l-5 5c-.275.26-.634.5-1 .5-.373 0-.74-.24-1-.5L1 8a2.853 2.853 0 0 1-.7-1C.113 6.55 0 5.973 0 5.6V1.4C0 1.034.134.669.401.401.67.134 1.034 0 1.4 0h4.2c.373 0 .95.113 1.4.3.45.187.732.432 1 .7l7.5 7.502c.26.274.5.632.5.998zM3.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/django/" rel="tag">Django</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="S.J avatar" src="/img/avatar.png" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About S.J</span>
+	</div>
+	<div class="authorbox__description">
+		dont go gentle into that the good night.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8B%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">SEO前线之优化知识</p></a>
+	</div>
+</nav>
+
+
+			</section>
+			<aside class="sidebar"><div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/django%E5%AE%9E%E6%88%98-1-%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">Django实战 1 个人博客</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/seo%E5%89%8D%E7%BA%BF%E4%B9%8B%E4%BC%98%E5%8C%96%E7%9F%A5%E8%AF%86/">SEO前线之优化知识</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb%E6%8A%84%E4%B9%A6%E4%BA%8C/">FlaskWeb抄书二</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E5%9B%9B/">FlaskWeb 抄书四</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/flaskweb-%E6%8A%84%E4%B9%A6%E4%B8%89/">FlaskWeb 抄书三</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/django">Django</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/flask">Flask</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/hugo">Hugo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/marketing">Marketing</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/others">Others</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/seo">Seo</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/blog" title="Blog">Blog (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/django" title="Django">Django (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/flask" title="Flask">Flask (4)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo" title="Hugo">Hugo (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/marketing" title="Marketing">Marketing (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/others" title="Others">Others (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sem" title="Sem">Sem (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/seo" title="Seo">Seo (1)</a>
+	</div>
+</div><div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/showo" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container">
+		<div class="footer__copyright">&copy; 2018 KNOWs. <span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span></div>
+	</div>
+</footer>
+
+	</div>
+<script>
+	var navigation = responsiveNav(".menu", {
+		navClass: "menu--collapse",
+		label: "Menu",
+	});
+</script></body>
+</html>
